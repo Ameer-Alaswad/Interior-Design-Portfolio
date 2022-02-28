@@ -1,8 +1,7 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
-// import MenuList from '@mui/material/MenuList';
+import * as React from "react";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
 
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -18,10 +17,10 @@ export default function BasicMenu() {
     <div>
       <Button
         id="basic-button"
-        aria-controls={open ? 'basic-menu' : undefined}
+        aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
-        aria-expanded={open ? 'true' : undefined}
-        onMouseOver={handleClick}
+        aria-expanded={open ? "true" : undefined}
+        onClick={handleClick}
       >
         Dashboard
       </Button>
@@ -29,10 +28,9 @@ export default function BasicMenu() {
         id="basic-menu"
         anchorEl={anchorEl}
         open={open}
-        onMouseLeave={handleClose}
+        onClose={handleClose}
         MenuListProps={{
-          'aria-labelledby': 'basic-button',
-          onMouseLeave: handleClose
+          "aria-labelledby": "basic-button",
         }}
       >
         <MenuItem onClick={handleClose}>Profile</MenuItem>
