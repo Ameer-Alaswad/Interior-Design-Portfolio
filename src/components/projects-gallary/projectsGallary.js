@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
-import { projectSHomePictures } from "../../projects-pictures/pictures";
+import { projectSHomePictures } from "../../projects-assets/projects-images";
 
 export default function PhotosGallery(props) {
   return (
@@ -23,14 +23,15 @@ function Item(props) {
         height: "590px",
         width: "900px",
         margin: "0 auto",
+        border: "none",
       }}
       sx={{ display: "flex", justifyContent: "center" }}
     >
       <img
-        src="/public/carousel/pic1.jpg"
+        src={props.item.img}
         alt=""
         style={{ height: "620px", width: "100%" }}
-      ></img>
+      />
     </Paper>
   );
 }
