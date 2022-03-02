@@ -7,14 +7,15 @@ import Button from "@mui/material/Button";
 import BasicMenu from "./DropDownMenu";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-
+import { ZEUS } from "../../default-colors/colors";
+console.log("ZEOS", ZEUS);
 const theme = createTheme({
   custom: {
     navbarButtonsMargin: {
       marginLeft: "25px",
     },
     header: {
-      backgroundColor: "#261f18",
+      backgroundColor: ZEUS,
       position: "static",
     },
     logoStyling: {
