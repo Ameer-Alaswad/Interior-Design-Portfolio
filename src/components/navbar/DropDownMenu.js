@@ -16,6 +16,9 @@ export default function BasicMenu() {
   return (
     <div>
       <Button
+        style={{
+          color: "white",
+        }}
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
