@@ -5,42 +5,34 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import BasicMenu from "./DropDownMenu";
-import { makeStyles } from "@material-ui/core/styles";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-const useStyles = makeStyles({
-  bar: {
-    backgroundColor: "#261f18",
-    height: "100px",
-  },
-  logoStyling: {
-    width: "100px",
-    height: "90px",
-    marginTop: "7px",
-  },
-});
+
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#261f18",
-    },
-  },
   custom: {
     navbarButtonsMargin: {
       marginLeft: "25px",
     },
+    header: {
+      backgroundColor: "#261f18",
+      position: "static",
+    },
+    logoStyling: {
+      width: "100px",
+      height: "90px",
+      marginTop: "7px",
+    },
   },
 });
 export default function Navbar() {
-  const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={theme}>
-        <AppBar position="static">
+        <AppBar style={theme.custom.header}>
           <Toolbar>
             <Typography sx={{ flexGrow: 1 }}>
               <img
-                className={classes.logoStyling}
+                style={theme.custom.logoStyling}
                 src={logo}
                 alt="logo-on-the-navbar"
               />
