@@ -50,7 +50,11 @@ function Item(props) {
       className={classes.containerOfImageInCarousel}
       sx={classes.containerOfImageInCarousel.sx}
     >
-      <img src={props.item.img} alt="" className={classes.imagesInCarousel} />
+      <img
+        src={props.item.img}
+        alt="imgs-in-carousel"
+        className={classes.imagesInCarousel}
+      />
     </Paper>
   );
 }
