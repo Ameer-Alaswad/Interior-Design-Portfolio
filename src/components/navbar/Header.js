@@ -8,7 +8,6 @@ import BasicMenu from "./DropDownMenu";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ZEUS } from "../../default-colors/colors";
-console.log("ZEOS", ZEUS);
 const theme = createTheme({
   custom: {
     navbarButtonsMargin: {
