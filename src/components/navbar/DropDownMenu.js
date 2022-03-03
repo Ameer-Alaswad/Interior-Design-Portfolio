@@ -2,7 +2,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-
+import { WHITE_SOLID } from "../../default-colors/colors";
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -17,7 +17,7 @@ export default function BasicMenu() {
     <div>
       <Button
         style={{
-          color: "white",
+          color: { WHITE_SOLID },
         }}
         id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
