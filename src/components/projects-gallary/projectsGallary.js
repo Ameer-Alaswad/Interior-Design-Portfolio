@@ -6,7 +6,7 @@ import { makeStyles } from "@mui/styles";
 import { CLOUDY } from "../../default-colors/colors";
 const useStyles = makeStyles({
   carouselContainer: {
-    width: "100vw",
+    width: "100%",
     backgroundColor: CLOUDY,
     height: "600px",
   },
