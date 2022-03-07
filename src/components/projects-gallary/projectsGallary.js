@@ -3,18 +3,19 @@ import Carousel from "react-material-ui-carousel";
 import { Paper } from "@mui/material";
 import { projectSHomePictures } from "../../projects-assets/projects-images";
 import { makeStyles } from "@mui/styles";
+import { CLOUDY } from "../../default-colors/colors";
 const useStyles = makeStyles({
   carouselContainer: {
     width: "100vw",
-    backgroundColor: "#a69d98",
+    backgroundColor: CLOUDY,
     height: "600px",
   },
   carousel: {
     height: "100%",
-    backgroundColor: "#a69d98",
+    backgroundColor: CLOUDY,
   },
   containerOfImageInCarousel: {
-    backgroundColor: "#a69d98",
+    backgroundColor: CLOUDY,
     height: "590px",
     width: "900px",
     margin: "0 auto",
