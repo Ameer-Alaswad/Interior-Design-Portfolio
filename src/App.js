@@ -10,6 +10,7 @@ function App() {
       <div className="App">
         <Navbar />
         <PhotosGallery />
+        <LandingPageBody />
       </div>
     </BrowserRouter>
   );
