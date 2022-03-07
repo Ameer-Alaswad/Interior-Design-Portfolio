@@ -1,6 +1,6 @@
 import "./App.css";
-import Navbar from "./components/navbar/Header";
-import LandingPageBody from "./components/navbar/landing-page-body/landingPageBody";
+import Navbar from "./components/navbar/header";
+import LandingPageBody from "./components/landing-page-body/landingPageBody";
 import { BrowserRouter, Route } from "react-router-dom";
 import PhotosGallery from "./components/projects-gallary/projectsGallary";
 

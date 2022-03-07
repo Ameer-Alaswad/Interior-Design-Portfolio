@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import { CONCRETE, ZEUS } from "../../../default-colors/colors";
+import { CONCRETE, ZEUS } from "../../default-colors/colors";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 const theme = createTheme({
