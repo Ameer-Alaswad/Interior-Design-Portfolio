@@ -58,6 +58,7 @@ const theme = createTheme({
     },
     paragraphsUnderLogo: {
       fontFamily: "'Century Gothic', sans-serif",
+      letterSpacing: "5px",
     },
     emailLinkInSectionTwo: {
       color: ZEUS,
@@ -72,7 +73,7 @@ const theme = createTheme({
     accountsLinks: {
       color: BLACK_SOLID,
       textDecoration: "none",
-      marginLeft: "10px",
+      marginLeft: "30px",
     },
   },
 });
@@ -110,7 +111,7 @@ export default function Footer() {
                 variant="h6"
                 gutterBottom
               >
-                DESIGHN
+                INTERIOR DESIGN
               </Typography>
             </Box>
 

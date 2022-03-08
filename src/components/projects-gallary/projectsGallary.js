@@ -17,7 +17,7 @@ const useStyles = makeStyles({
   containerOfImageInCarousel: {
     backgroundColor: CLOUDY,
     height: "590px",
-    width: "900px",
+    width: "1100px",
     margin: "0 auto",
     boxShadow: "none",
     sx: {
@@ -28,6 +28,7 @@ const useStyles = makeStyles({
   imagesInCarousel: {
     height: "600px",
     width: "100%",
+    // objectFit: "scale-down",
   },
 });
 
