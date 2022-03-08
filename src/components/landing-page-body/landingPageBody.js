@@ -5,6 +5,7 @@ import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
 import { CONCRETE, ZEUS } from "../../default-colors/colors";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { CENTURY_GOTHIC } from "../fonts/fonts";
 
 const theme = createTheme({
   custom: {
@@ -30,11 +31,11 @@ const theme = createTheme({
     },
     sectionOneStyling: {
       fontSize: "32px",
-      fontFamily: "'Century Gothic', sans-serif",
+      fontFamily: CENTURY_GOTHIC,
     },
     secondTypographyInSectionOne: {
       marginTop: "25px",
-      fontFamily: "'Century Gothic', sans-serif",
+      fontFamily: CENTURY_GOTHIC,
       fontSize: "23px",
     },
     viewProjectsButton: {
@@ -50,12 +51,12 @@ const theme = createTheme({
     sectionTwoStyling: {
       fontSize: "30px",
       marginTop: "15px",
-      fontFamily: "'Century Gothic', sans-serif",
+      fontFamily: CENTURY_GOTHIC,
     },
     sectionThreeStyling: {
       fontSize: "15px",
       marginTop: "25px",
-      fontFamily: "'Century Gothic', sans-serif",
+      fontFamily: CENTURY_GOTHIC,
     },
     weLoveToHearAboutYourProjectButton: {
       border: "solid 2px",
