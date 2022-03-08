@@ -84,9 +84,11 @@ export default function LandingPageBody() {
       >
         <Typography style={theme.custom.sectionOneStyling}>
           Destination Eichler creates inviting and functional modern interiors
-          <Typography style={theme.custom.secondTypographyInSectionOne}>
-            SAN FRANCISCO BAY AREA & BEYOND
-          </Typography>
+          <br />
+          SAN FRANCISCO BAY AREA & BEYOND
+          <Typography
+            style={theme.custom.secondTypographyInSectionOne}
+          ></Typography>
           <Stack spacing={2} direction="row">
             <Button style={theme.custom.viewProjectsButton} variant="contained">
               VIEW PROJECTS
@@ -97,11 +99,9 @@ export default function LandingPageBody() {
         <Typography style={{ marginTop: "40px" }}>
           <Typography style={theme.custom.sectionTwoStyling}>
             LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE
-          </Typography>
-          <Typography style={theme.custom.sectionTwoStyling}>
-            _ ONE THATS A REFLECTION OF YOUR UNIQUE PERSONALITY, INTERSTS
-          </Typography>
-          <Typography style={theme.custom.sectionTwoStyling}>
+            <br />_ ONE THAT'S A REFLECTION OF YOUR UNIQUE PERSONALITY,
+            INTERESTS
+            <br />
             AND DAY-TO-DAY NEEDS.
           </Typography>
           <div style={theme.custom.sectionsWrapper}></div>
@@ -110,11 +110,11 @@ export default function LandingPageBody() {
           <Typography style={theme.custom.sectionThreeStyling}>
             GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGHN FIRM BASED
             IN GERMANY, BERLIN.
-          </Typography>
-          <Typography style={theme.custom.sectionThreeStyling}>
+            <br />
+            <br />
             WE SERVICE RESIDENTAL AND COMMERCIAL PROJECTS NATIONWIDE-
-          </Typography>
-          <Typography style={theme.custom.sectionThreeStyling}>
+            <br />
+            <br />
             WITH CREATIVE AND CUSTOM SOLUTIONS
           </Typography>
           <div style={theme.custom.sectionsWrapper}></div>
