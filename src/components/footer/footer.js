@@ -121,7 +121,7 @@ export default function Footer() {
               gutterBottom
             >
               FOR MORE INFORMATION, EMAIL{" "}
-              <Link style={theme.custom.emailLinkInSectionTwo} href="#">
+              <Link style={theme.custom.emailLinkInSectionTwo}>
                 <em>ghaith.konbaz@gmail.com</em>
               </Link>{" "}
               .
