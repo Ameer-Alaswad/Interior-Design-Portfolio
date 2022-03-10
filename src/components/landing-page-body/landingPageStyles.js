@@ -1,13 +1,23 @@
-import { useTheme } from "@mui/material/styles";
-import useMediaQuery from "@mui/material/useMediaQuery";
 import { makeStyles } from "@mui/styles";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material/styles";
 import { CONCRETE, ZEUS } from "../../default-colors/colors";
 
 export const useStyles = makeStyles(() => ({
   sectionTwo: {
+    fontSize: "30px",
+    marginTop: "15px",
+    fontFamily: "'Century Gothic', sans-serif",
     [theme.breakpoints.down("sm")]: {
       color: "blue",
+      fontSize: "15px",
+    },
+  },
+  sectionOneStyling: {
+    fontSize: "32px",
+    fontFamily: "'Century Gothic', sans-serif",
+    [theme.breakpoints.down("sm")]: {
+      color: "blue",
+      fontSize: "16px",
     },
   },
 }));
@@ -34,10 +44,7 @@ theme = createTheme({
       opacity: "0.2",
       marginTop: "65px",
     },
-    sectionOneStyling: {
-      fontSize: "32px",
-      fontFamily: "'Century Gothic', sans-serif",
-    },
+
     secondTypographyInSectionOne: {
       marginTop: "25px",
       fontFamily: "'Century Gothic', sans-serif",
@@ -53,14 +60,7 @@ theme = createTheme({
       padding: "13px",
       width: "185px",
     },
-    sectionTwoStyling: {
-      fontSize: "30px",
-      marginTop: "15px",
-      fontFamily: "'Century Gothic', sans-serif",
-      [theme.breakpoints.down("sm")]: {
-        color: "blue",
-      },
-    },
+
     sectionThreeStyling: {
       fontSize: "15px",
       marginTop: "25px",

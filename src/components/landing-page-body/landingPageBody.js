@@ -18,11 +18,10 @@ export default function LandingPageBody() {
         style={theme.custom.LandingPageBodyContainer}
         sx={theme.custom.LandingPageBodyContainer.sx}
       >
-        <Typography style={theme.custom.sectionOneStyling}>
+        <Typography className={classes.sectionOneStyling}>
           Destination Eichler creates inviting and functional modern interiors
-          <Typography style={theme.custom.secondTypographyInSectionOne}>
-            SAN FRANCISCO BAY AREA & BEYOND
-          </Typography>
+          {!matches ? <br /> : false}
+          SAN FRANCISCO BAY AREA & BEYOND
           <Stack spacing={2} direction="row">
             <Button style={theme.custom.viewProjectsButton} variant="contained">
               VIEW PROJECTS
@@ -31,32 +30,27 @@ export default function LandingPageBody() {
           <div style={theme.custom.sectionsWrapper}></div>
         </Typography>
         <Typography style={{ marginTop: "40px" }}>
-          <Typography
-            // variant={matches ? "h10" : "h2"}
-            style={theme.custom.sectionTwoStyling}
-            className={classes.sectionTwo}
-          >
+          <Typography className={classes.sectionTwo}>
             LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE
-          </Typography>
-          <Typography style={theme.custom.sectionTwoStyling}>
-            _ ONE THATS A REFLECTION OF YOUR UNIQUE PERSONALITY, INTERSTS
-          </Typography>
-          <Typography style={theme.custom.sectionTwoStyling}>
+            {!matches ? <br /> : false}_ ONE THATS A REFLECTION OF YOUR UNIQUE
+            PERSONALITY, INTERSTS
+            {!matches ? <br /> : false}
             AND DAY-TO-DAY NEEDS.
           </Typography>
+
           <div style={theme.custom.sectionsWrapper}></div>
         </Typography>
         <Typography style={{ marginTop: "40px" }}>
           <Typography style={theme.custom.sectionThreeStyling}>
             GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGHN FIRM BASED
-            IN GERMANY, BERLIN.
+            {!matches ? <br /> : false}
+            {!matches ? <br /> : false}
+            IN GERMANY, BERLIN. WE SERVICE RESIDENTAL AND COMMERCIAL PROJECTS
+            {!matches ? <br /> : false}
+            {!matches ? <br /> : false}
+            NATIONWIDE- WITH CREATIVE AND CUSTOM SOLUTIONS.
           </Typography>
-          <Typography style={theme.custom.sectionThreeStyling}>
-            WE SERVICE RESIDENTAL AND COMMERCIAL PROJECTS NATIONWIDE-
-          </Typography>
-          <Typography style={theme.custom.sectionThreeStyling}>
-            WITH CREATIVE AND CUSTOM SOLUTIONS
-          </Typography>
+
           <div style={theme.custom.sectionsWrapper}></div>
         </Typography>
         <div style={{ height: "200px" }}>
