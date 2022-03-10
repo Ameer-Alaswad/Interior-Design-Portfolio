@@ -3,79 +3,15 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
-import { CONCRETE, ZEUS } from "../../default-colors/colors";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { CENTURY_GOTHIC } from "../fonts/fonts";
-
-const theme = createTheme({
-  custom: {
-    LandingPageBodyContainer: {
-      paddingTop: "96px",
-      backgroundColor: CONCRETE,
-      width: "100%",
-
-      sx: {
-        display: "flex",
-        flexDirection: "column",
-        textAlign: "center",
-      },
-    },
-    sectionsWrapper: {
-      borderBottom: "solid 0.5px",
-      borderWidth: "50%",
-      fontSize: "32px",
-      width: "62%",
-      margin: "0 auto",
-      opacity: "0.2",
-      marginTop: "65px",
-    },
-    sectionOneStyling: {
-      fontSize: "32px",
-      fontFamily: CENTURY_GOTHIC,
-    },
-    secondTypographyInSectionOne: {
-      marginTop: "25px",
-      fontFamily: CENTURY_GOTHIC,
-      fontSize: "23px",
-    },
-    viewProjectsButton: {
-      margin: "0 auto",
-      marginTop: "20px",
-      backgroundColor: ZEUS,
-      borderRadius: "0",
-      fontSize: "12px",
-      letterSpacing: "3px",
-      padding: "13px",
-      width: "185px",
-    },
-    sectionTwoStyling: {
-      fontSize: "30px",
-      marginTop: "15px",
-      fontFamily: CENTURY_GOTHIC,
-    },
-    sectionThreeStyling: {
-      fontSize: "15px",
-      marginTop: "25px",
-      fontFamily: CENTURY_GOTHIC,
-    },
-    weLoveToHearAboutYourProjectButton: {
-      border: "solid 2px",
-      margin: "0 auto",
-      marginTop: "40px",
-      borderRadius: "0",
-      fontSize: "12px",
-      letterSpacing: "3px",
-      padding: "13px",
-      width: "420px",
-      color: "black",
-      letterSpacing: "1.5px",
-      padding: "15px 15px",
-      fontWeight: "bald",
-    },
-  },
-});
+import { ThemeProvider } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useStyles, theme } from "./landingPageStyles";
 
 export default function LandingPageBody() {
+  const theTheme = useTheme();
+  const classes = useStyles();
+  const matches = useMediaQuery(theTheme.breakpoints.down("sm"));
   return (
     <ThemeProvider theme={theme}>
       <Box
@@ -84,11 +20,9 @@ export default function LandingPageBody() {
       >
         <Typography style={theme.custom.sectionOneStyling}>
           Destination Eichler creates inviting and functional modern interiors
-          <br />
-          SAN FRANCISCO BAY AREA & BEYOND
-          <Typography
-            style={theme.custom.secondTypographyInSectionOne}
-          ></Typography>
+          <Typography style={theme.custom.secondTypographyInSectionOne}>
+            SAN FRANCISCO BAY AREA & BEYOND
+          </Typography>
           <Stack spacing={2} direction="row">
             <Button style={theme.custom.viewProjectsButton} variant="contained">
               VIEW PROJECTS
@@ -97,11 +31,17 @@ export default function LandingPageBody() {
           <div style={theme.custom.sectionsWrapper}></div>
         </Typography>
         <Typography style={{ marginTop: "40px" }}>
-          <Typography style={theme.custom.sectionTwoStyling}>
+          <Typography
+            // variant={matches ? "h10" : "h2"}
+            style={theme.custom.sectionTwoStyling}
+            className={classes.sectionTwo}
+          >
             LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE
-            <br />_ ONE THAT'S A REFLECTION OF YOUR UNIQUE PERSONALITY,
-            INTERESTS
-            <br />
+          </Typography>
+          <Typography style={theme.custom.sectionTwoStyling}>
+            _ ONE THATS A REFLECTION OF YOUR UNIQUE PERSONALITY, INTERSTS
+          </Typography>
+          <Typography style={theme.custom.sectionTwoStyling}>
             AND DAY-TO-DAY NEEDS.
           </Typography>
           <div style={theme.custom.sectionsWrapper}></div>
@@ -110,11 +50,11 @@ export default function LandingPageBody() {
           <Typography style={theme.custom.sectionThreeStyling}>
             GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGHN FIRM BASED
             IN GERMANY, BERLIN.
-            <br />
-            <br />
+          </Typography>
+          <Typography style={theme.custom.sectionThreeStyling}>
             WE SERVICE RESIDENTAL AND COMMERCIAL PROJECTS NATIONWIDE-
-            <br />
-            <br />
+          </Typography>
+          <Typography style={theme.custom.sectionThreeStyling}>
             WITH CREATIVE AND CUSTOM SOLUTIONS
           </Typography>
           <div style={theme.custom.sectionsWrapper}></div>
