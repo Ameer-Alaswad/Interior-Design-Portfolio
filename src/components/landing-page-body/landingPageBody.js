@@ -7,8 +7,14 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useStyles, theme } from "./landingPageStyles";
-
+const landingPageBodyText =
+  require("../../projects-assets/projectText.json")[0];
 export default function LandingPageBody() {
+  const sectionOneText = landingPageBodyText.landingPageText.sectionOneText;
+  const sectionTwoText = landingPageBodyText.landingPageText.sectionTwoText;
+  const sectionThreeText = landingPageBodyText.landingPageText.sectionThreeText;
+  const weLoveToHearAboutYourProjectButtonText =
+    landingPageBodyText.landingPageText.weLoveToHearAboutYourProjectButtonText;
   const theTheme = useTheme();
   const classes = useStyles();
   const matches = useMediaQuery(theTheme.breakpoints.down("sm"));
@@ -19,36 +25,40 @@ export default function LandingPageBody() {
         sx={theme.custom.LandingPageBodyContainer.sx}
       >
         <Typography className={classes.sectionOneStyling}>
-          Destination Eichler creates inviting and functional modern interiors
+          {sectionOneText.line1}
           {!matches ? <br /> : false}
-          SAN FRANCISCO BAY AREA & BEYOND
+          {sectionOneText.line2}
           <Stack spacing={2} direction="row">
-            <Button style={theme.custom.viewProjectsButton} variant="contained">
-              VIEW PROJECTS
+            <Button
+              data-test-id="view-projects-button"
+              style={theme.custom.viewProjectsButton}
+              variant="contained"
+            >
+              {sectionOneText.buttonText}
             </Button>
           </Stack>
           <div style={theme.custom.sectionsWrapper}></div>
         </Typography>
         <Typography style={{ marginTop: "40px" }}>
           <Typography className={classes.sectionTwo}>
-            LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE
-            {!matches ? <br /> : false}_ ONE THATS A REFLECTION OF YOUR UNIQUE
-            PERSONALITY, INTERSTS
+            {sectionTwoText.line1}
             {!matches ? <br /> : false}
-            AND DAY-TO-DAY NEEDS.
+            {sectionTwoText.line2}
+            {!matches ? <br /> : false}
+            {sectionTwoText.line3}
           </Typography>
 
           <div style={theme.custom.sectionsWrapper}></div>
         </Typography>
         <Typography style={{ marginTop: "40px" }}>
           <Typography style={theme.custom.sectionThreeStyling}>
-            GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGHN FIRM BASED
+            {sectionThreeText.line1}
             {!matches ? <br /> : false}
             {!matches ? <br /> : false}
-            IN GERMANY, BERLIN. WE SERVICE RESIDENTAL AND COMMERCIAL PROJECTS
+            {sectionThreeText.line2}
             {!matches ? <br /> : false}
             {!matches ? <br /> : false}
-            NATIONWIDE- WITH CREATIVE AND CUSTOM SOLUTIONS.
+            {sectionThreeText.line3}
           </Typography>
 
           <div style={theme.custom.sectionsWrapper}></div>
@@ -56,10 +66,11 @@ export default function LandingPageBody() {
         <div style={{ height: "200px" }}>
           <Stack spacing={2} direction="row">
             <Button
+              data-test-id="contact-us-button"
               style={theme.custom.weLoveToHearAboutYourProjectButton}
               variant="outlined"
             >
-              WE'D LOVE TO HEAR ABOUT YOUR PROJECT
+              {weLoveToHearAboutYourProjectButtonText}
             </Button>
           </Stack>
         </div>

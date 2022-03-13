@@ -8,7 +8,6 @@ export const useStyles = makeStyles(() => ({
     marginTop: "15px",
     fontFamily: "'Century Gothic', sans-serif",
     [theme.breakpoints.down("sm")]: {
-      color: "blue",
       fontSize: "15px",
     },
   },
@@ -16,13 +15,11 @@ export const useStyles = makeStyles(() => ({
     fontSize: "32px",
     fontFamily: "'Century Gothic', sans-serif",
     [theme.breakpoints.down("sm")]: {
-      color: "blue",
       fontSize: "16px",
     },
   },
 }));
-export let theme = createTheme();
-theme = createTheme({
+export const theme = createTheme({
   custom: {
     LandingPageBodyContainer: {
       paddingTop: "96px",
