@@ -15,10 +15,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Divider from "@material-ui/core/Divider";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-export const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(() => ({
   navbarButtonsMargin: {
     marginRight: "10px",
-    // [theme.breakpoints.down("sm")]: {},
   },
 }));
 

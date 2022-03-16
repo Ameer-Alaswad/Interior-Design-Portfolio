@@ -3,6 +3,10 @@ import Box from "@mui/material/Box";
 import { logo } from "../../utils/assets";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+
+import { makeStyles } from "@mui/styles";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
   ZEUS,
@@ -10,6 +14,25 @@ import {
   FLINT,
   BLACK_SOLID,
 } from "../../default-colors/colors";
+
+const useStyles = makeStyles(() => ({
+  contctingByEmail: {
+    fontFamily: "'Century Gothic', sans-serif",
+    letterSpacing: "5px",
+    fontSize: "18px",
+
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      fontSize: "15px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px",
+    },
+  },
+}));
+
 const theme = createTheme({
   custom: {
     footerContainer: {
@@ -79,6 +102,10 @@ const theme = createTheme({
 });
 
 export default function Footer() {
+  const classes = useStyles();
+  const theTheme = useTheme();
+  const matches = useMediaQuery(theTheme.breakpoints.down("sm"));
+
   return (
     <ThemeProvider theme={theme}>
       <Box style={{ width: "100%" }} sx={theme.custom.footerContainer.sx}>
@@ -115,17 +142,14 @@ export default function Footer() {
               </Typography>
             </Box>
 
-            <Typography
-              style={theme.custom.paragraphsUnderLogo}
-              variant="h6"
-              gutterBottom
-            >
-              FOR MORE INFORMATION, EMAIL{" "}
+            <p className={classes.contctingByEmail}>
+              FOR MORE INFORMATION, EMAIL:
+              {matches ? <br /> : false}
               <Link style={theme.custom.emailLinkInSectionTwo}>
                 <em>ghaith.konbaz@gmail.com</em>
-              </Link>{" "}
+              </Link>
               .
-            </Typography>
+            </p>
             <Typography style={theme.custom.accountsLinksContainer}>
               <Link
                 style={theme.custom.accountsLinks}
