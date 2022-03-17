@@ -16,7 +16,7 @@ import {
 } from "../../default-colors/colors";
 
 const useStyles = makeStyles(() => ({
-  contctingByEmail: {
+  contactingByEmail: {
     fontFamily: "'Century Gothic', sans-serif",
     letterSpacing: "5px",
     fontSize: "18px",
@@ -25,10 +25,24 @@ const useStyles = makeStyles(() => ({
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      fontSize: "15px",
+      fontSize: "10px",
+      letterSpacing: "0px",
     },
     [theme.breakpoints.down("sm")]: {
       fontSize: "12px",
+    },
+  },
+  accountsLinksContainer: {
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  },
+
+  accountsLinks: {
+    [theme.breakpoints.down("md")]: {
+      fontSize: "10px",
     },
   },
 }));
@@ -82,6 +96,7 @@ const theme = createTheme({
     paragraphsUnderLogo: {
       fontFamily: "'Century Gothic', sans-serif",
       letterSpacing: "5px",
+      fontWeight: "bold",
     },
     emailLinkInSectionTwo: {
       color: ZEUS,
@@ -126,23 +141,15 @@ export default function Footer() {
                 alt="logo-in-footer"
                 style={theme.custom.logoInFooter}
               />
-              <Typography
-                style={theme.custom.paragraphsUnderLogo}
-                variant="h5"
-                gutterBottom
-              >
+              <Typography gutterBottom style={theme.custom.paragraphsUnderLogo}>
                 GHAITH KONBAZ
               </Typography>
-              <Typography
-                style={theme.custom.paragraphsUnderLogo}
-                variant="h6"
-                gutterBottom
-              >
+              <Typography gutterBottom style={theme.custom.paragraphsUnderLogo}>
                 INTERIOR DESIGN
               </Typography>
             </Box>
 
-            <p className={classes.contctingByEmail}>
+            <p className={classes.contactingByEmail}>
               FOR MORE INFORMATION, EMAIL:
               {matches ? <br /> : false}
               <Link style={theme.custom.emailLinkInSectionTwo}>
@@ -150,26 +157,33 @@ export default function Footer() {
               </Link>
               .
             </p>
-            <Typography style={theme.custom.accountsLinksContainer}>
+            <Typography
+              className={classes.accountsLinksContainer}
+              style={theme.custom.accountsLinksContainer}
+            >
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.instagram.com/ghaith37/"
               >
                 INSTAGRAM
               </Link>
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.linkedin.com/in/ghaith-konbaz-8ab714193/"
               >
                 LINKEDIN
               </Link>
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.facebook.com/ghaithkonbaz/"
               >
                 FACEBOOK
               </Link>
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.fiverr.com/ghaith37"
               >
