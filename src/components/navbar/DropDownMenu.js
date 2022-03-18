@@ -3,6 +3,14 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { WHITE_SOLID } from "../../default-colors/colors";
+const projects = require("../../projects-assets/projectText.json")[0].headerText
+  .projects;
+const profile = require("../../projects-assets/projectText.json")[0]
+  .dropDownMenuText.profile;
+const myAccount = require("../../projects-assets/projectText.json")[0]
+  .dropDownMenuText.myAccount;
+const logout = require("../../projects-assets/projectText.json")[0]
+  .dropDownMenuText.logout;
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -25,7 +33,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Dashboard
+        {projects}
       </Button>
       <Menu
         id="basic-menu"
@@ -36,9 +44,9 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>{profile}</MenuItem>
+        <MenuItem onClick={handleClose}>{myAccount}</MenuItem>
+        <MenuItem onClick={handleClose}>{logout}</MenuItem>
       </Menu>
     </div>
   );

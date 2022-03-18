@@ -34,6 +34,18 @@
         "fiver":"FIVERR"
         } 
 
+    },
+       "headerText":{
+          "explore":"EXPLORE",
+          "home":"HOME",
+          "projects":"PROJECTS",
+          "contract":"CONTRACT",
+          "contact":"CONTACT"
+    },
+    "dropDownMenuText":{
+        "profile":"Profile",
+        "myAccount":"My account",
+        "logout":"Logout"
     }
 
 }
