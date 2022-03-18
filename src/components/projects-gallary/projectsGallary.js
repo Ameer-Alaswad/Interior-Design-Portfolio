@@ -13,12 +13,10 @@ const useStyles = makeStyles({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    [theme.breakpoints.down("lg")]: {},
   },
 
   imagesInCarousel: {
     height: "100%",
-    width: "600px%",
     [theme.breakpoints.down("xl")]: {
       height: "85%",
       width: "65%",
