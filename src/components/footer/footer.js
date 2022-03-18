@@ -1,15 +1,22 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import { logo } from "../../utils/assets";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
   ZEUS,
   WHITE_SOLID,
   FLINT,
   BLACK_SOLID,
 } from "../../default-colors/colors";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import { logo } from "../../utils/assets";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+const underLogoText = require("../../projects-assets/projectText.json")[0]
+  .footerText.underLogoText;
+const contactingEmail = require("../../projects-assets/projectText.json")[0]
+  .footerText.contactingEmail;
+const socialLinks = require("../../projects-assets/projectText.json")[0]
+  .footerText.socialLinks;
+
 const theme = createTheme({
   custom: {
     footerContainer: {
@@ -104,14 +111,14 @@ export default function Footer() {
                 variant="h5"
                 gutterBottom
               >
-                GHAITH KONBAZ
+                {underLogoText.name}
               </Typography>
               <Typography
                 style={theme.custom.paragraphsUnderLogo}
                 variant="h6"
                 gutterBottom
               >
-                INTERIOR DESIGN
+                {underLogoText.jobTitle}
               </Typography>
             </Box>
 
@@ -120,9 +127,9 @@ export default function Footer() {
               variant="h6"
               gutterBottom
             >
-              FOR MORE INFORMATION, EMAIL{" "}
+              {contactingEmail.forMoreInformation}{" "}
               <Link style={theme.custom.emailLinkInSectionTwo}>
-                <em>ghaith.konbaz@gmail.com</em>
+                <em>{contactingEmail.emailLink}</em>
               </Link>{" "}
               .
             </Typography>
@@ -131,25 +138,25 @@ export default function Footer() {
                 style={theme.custom.accountsLinks}
                 href="https://www.instagram.com/ghaith37/"
               >
-                INSTAGRAM
+                {socialLinks.instagram}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.linkedin.com/in/ghaith-konbaz-8ab714193/"
               >
-                LINKEDIN
+                {socialLinks.linkedIn}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.facebook.com/ghaithkonbaz/"
               >
-                FACEBOOK
+                {socialLinks.facebook}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.fiverr.com/ghaith37"
               >
-                FIVERR
+                {socialLinks.fiver}
               </Link>
             </Typography>
           </Box>

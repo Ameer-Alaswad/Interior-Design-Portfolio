@@ -17,6 +17,23 @@
             "line3":"NATIONWIDE- WITH CREATIVE AND CUSTOM SOLUTIONS."
            },
            "weLoveToHearAboutYourProjectButtonText":"WE'D LOVE TO HEAR ABOUT YOUR PROJECT"
+    },
+       "footerText":{
+        "underLogoText":{
+         "name":"GHAITH KONBAZ",
+         "jobTitle":"INTERIOR DESIGN"
+      },
+       "contactingEmail":{
+       "forMoreInformation":"FOR MORE INFORMATION, EMAIL",
+       "emailLink":"ghaith.konbaz@gmail.com"
+       },
+       "socialLinks":{
+        "instagram":"INSTAGRAM",
+        "linkedIn":"LINKEDIN",
+        "facebook":"FACEBOOK",
+        "fiver":"FIVERR"
+        } 
+
     }
 
 }
