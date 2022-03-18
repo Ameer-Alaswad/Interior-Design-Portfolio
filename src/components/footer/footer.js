@@ -25,15 +25,15 @@ const useStyles = makeStyles(() => ({
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      fontSize: "10px",
+      fontSize: "19px",
       letterSpacing: "0px",
     },
     [theme.breakpoints.down("sm")]: {
-      fontSize: "12px",
+      fontSize: "15px",
     },
   },
   accountsLinksContainer: {
-    [theme.breakpoints.down("md")]: {
+    [theme.breakpoints.down("sm")]: {
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -41,8 +41,8 @@ const useStyles = makeStyles(() => ({
   },
 
   accountsLinks: {
-    [theme.breakpoints.down("md")]: {
-      fontSize: "10px",
+    [theme.breakpoints.up("md")]: {
+      fontSize: "15px",
     },
   },
 }));
@@ -107,6 +107,7 @@ const theme = createTheme({
       fontWeight: "bold",
       fontFamily: "'Century Gothic', sans-serif",
       marginBottom: "40px",
+      marginRight: "20px",
     },
     accountsLinks: {
       color: BLACK_SOLID,
