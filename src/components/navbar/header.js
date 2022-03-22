@@ -7,7 +7,7 @@ import Button from "@mui/material/Button";
 import BasicMenu from "./DropDownMenu";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { ZEUS } from "../../default-colors/colors";
+import { ZEUS, WHITE_SOLID } from "../../default-colors/colors";
 import { makeStyles } from "@mui/styles";
 import Hidden from "@material-ui/core/Hidden";
 import IconButton from "@material-ui/core/IconButton";
@@ -33,7 +33,7 @@ const theme = createTheme({
       marginTop: "7px",
     },
     menuIconStyling: {
-      color: "white",
+      color: { WHITE_SOLID },
       fontSize: "2.5rem",
     },
   },
