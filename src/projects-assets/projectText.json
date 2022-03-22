@@ -1,20 +1,20 @@
-[
+
     {
         "landingPageText":{
            "sectionOneText":{
-            "line1":"Destination Eichler creates inviting and functional modern interiors",
-            "line2":"SAN FRANCISCO BAY AREA & BEYOND",
-            "buttonText":"VIEW PROJECTS"
+            "line1SectionOne":"Destination Eichler creates inviting and functional modern interiors",
+            "line2SectionOne":"SAN FRANCISCO BAY AREA & BEYOND",
+            "buttonTextSectionOne":"VIEW PROJECTS"
            },
            "sectionTwoText":{
-            "line1":"LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE",
-            "line2":"_ ONE THATS A REFLECTION OF YOUR UNIQUE",
-            "line3":"AND DAY-TO-DAY NEEDS."
+            "line1SectionTwo":"LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE",
+            "line2SectionTwo":"_ ONE THATS A REFLECTION OF YOUR UNIQUE",
+            "line3SectionTwo":"AND DAY-TO-DAY NEEDS."
            },
            "sectionThreeText":{
-            "line1":"GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGN FIRM BASED",
-            "line2":"IN GERMANY, BERLIN. WE SERVICE RESIDENTIAL AND COMMERCIAL PROJECTS",
-            "line3":"NATIONWIDE- WITH CREATIVE AND CUSTOM SOLUTIONS."
+            "line1SectionThree":"GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGN FIRM BASED",
+            "line2SectionThree":"IN GERMANY, BERLIN. WE SERVICE RESIDENTIAL AND COMMERCIAL PROJECTS",
+            "line3SectionThree":"NATIONWIDE- WITH CREATIVE AND CUSTOM SOLUTIONS."
            },
            "weLoveToHearAboutYourProjectButtonText":"WE'D LOVE TO HEAR ABOUT YOUR PROJECT"
     },
@@ -49,4 +49,4 @@
     }
 
 }
-]
+

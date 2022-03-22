@@ -10,12 +10,10 @@ import { logo } from "../../utils/assets";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-const underLogoText = require("../../projects-assets/projectText.json")[0]
-  .footerText.underLogoText;
-const contactingEmail = require("../../projects-assets/projectText.json")[0]
-  .footerText.contactingEmail;
-const socialLinks = require("../../projects-assets/projectText.json")[0]
-  .footerText.socialLinks;
+import text from "../../projects-assets/projectText.json";
+const { name, jobTitle } = text.footerText.underLogoText;
+const { instagram, linkedIn, facebook, fiver } = text.footerText.socialLinks;
+const { forMoreInformation, emailLink } = text.footerText.contactingEmail;
 
 const theme = createTheme({
   custom: {
@@ -111,14 +109,14 @@ export default function Footer() {
                 variant="h5"
                 gutterBottom
               >
-                {underLogoText.name}
+                {name}
               </Typography>
               <Typography
                 style={theme.custom.paragraphsUnderLogo}
                 variant="h6"
                 gutterBottom
               >
-                {underLogoText.jobTitle}
+                {jobTitle}
               </Typography>
             </Box>
 
@@ -127,9 +125,9 @@ export default function Footer() {
               variant="h6"
               gutterBottom
             >
-              {contactingEmail.forMoreInformation}{" "}
+              {forMoreInformation}{" "}
               <Link style={theme.custom.emailLinkInSectionTwo}>
-                <em>{contactingEmail.emailLink}</em>
+                <em>{emailLink}</em>
               </Link>{" "}
               .
             </Typography>
@@ -138,25 +136,25 @@ export default function Footer() {
                 style={theme.custom.accountsLinks}
                 href="https://www.instagram.com/ghaith37/"
               >
-                {socialLinks.instagram}
+                {instagram}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.linkedin.com/in/ghaith-konbaz-8ab714193/"
               >
-                {socialLinks.linkedIn}
+                {linkedIn}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.facebook.com/ghaithkonbaz/"
               >
-                {socialLinks.facebook}
+                {facebook}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.fiverr.com/ghaith37"
               >
-                {socialLinks.fiver}
+                {fiver}
               </Link>
             </Typography>
           </Box>

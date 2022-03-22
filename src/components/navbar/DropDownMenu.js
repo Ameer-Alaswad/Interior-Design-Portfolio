@@ -3,14 +3,10 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { WHITE_SOLID } from "../../default-colors/colors";
-const projects = require("../../projects-assets/projectText.json")[0].headerText
-  .projects;
-const profile = require("../../projects-assets/projectText.json")[0]
-  .dropDownMenuText.profile;
-const myAccount = require("../../projects-assets/projectText.json")[0]
-  .dropDownMenuText.myAccount;
-const logout = require("../../projects-assets/projectText.json")[0]
-  .dropDownMenuText.logout;
+import text from "../../projects-assets/projectText.json";
+const { projects } = text.headerText;
+const { profile, myAccount, logout } = text.dropDownMenuText;
+
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);

@@ -8,14 +8,8 @@ import BasicMenu from "./DropDownMenu";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ZEUS } from "../../default-colors/colors";
-const home = require("../../projects-assets/projectText.json")[0].headerText
-  .home;
-const explore = require("../../projects-assets/projectText.json")[0].headerText
-  .explore;
-const contact = require("../../projects-assets/projectText.json")[0].headerText
-  .contact;
-const contract = require("../../projects-assets/projectText.json")[0].headerText
-  .contract;
+import text from "../../projects-assets/projectText.json";
+const { home, explore, contract, contact } = text.headerText;
 
 const theme = createTheme({
   custom: {
