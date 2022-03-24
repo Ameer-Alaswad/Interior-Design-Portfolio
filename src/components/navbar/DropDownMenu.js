@@ -3,6 +3,10 @@ import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import { WHITE_SOLID } from "../../default-colors/colors";
+import text from "../../projects-assets/projectText.json";
+const { projects } = text.headerText;
+const { profile, myAccount, logout } = text.dropDownMenuText;
+
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -25,7 +29,7 @@ export default function BasicMenu() {
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
-        Dashboard
+        {projects}
       </Button>
       <Menu
         id="basic-menu"
@@ -36,9 +40,9 @@ export default function BasicMenu() {
           "aria-labelledby": "basic-button",
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem onClick={handleClose}>{profile}</MenuItem>
+        <MenuItem onClick={handleClose}>{myAccount}</MenuItem>
+        <MenuItem onClick={handleClose}>{logout}</MenuItem>
       </Menu>
     </div>
   );

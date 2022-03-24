@@ -1,15 +1,20 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import { logo } from "../../utils/assets";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
   ZEUS,
   WHITE_SOLID,
   FLINT,
   BLACK_SOLID,
 } from "../../default-colors/colors";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import { logo } from "../../utils/assets";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import text from "../../projects-assets/projectText.json";
+const { name, jobTitle } = text.footerText.underLogoText;
+const { instagram, linkedIn, facebook, fiver } = text.footerText.socialLinks;
+const { forMoreInformation, emailLink } = text.footerText.contactingEmail;
+
 const theme = createTheme({
   custom: {
     footerContainer: {
@@ -104,14 +109,14 @@ export default function Footer() {
                 variant="h5"
                 gutterBottom
               >
-                GHAITH KONBAZ
+                {name}
               </Typography>
               <Typography
                 style={theme.custom.paragraphsUnderLogo}
                 variant="h6"
                 gutterBottom
               >
-                INTERIOR DESIGN
+                {jobTitle}
               </Typography>
             </Box>
 
@@ -120,9 +125,9 @@ export default function Footer() {
               variant="h6"
               gutterBottom
             >
-              FOR MORE INFORMATION, EMAIL{" "}
+              {forMoreInformation}{" "}
               <Link style={theme.custom.emailLinkInSectionTwo}>
-                <em>ghaith.konbaz@gmail.com</em>
+                <em>{emailLink}</em>
               </Link>{" "}
               .
             </Typography>
@@ -131,25 +136,25 @@ export default function Footer() {
                 style={theme.custom.accountsLinks}
                 href="https://www.instagram.com/ghaith37/"
               >
-                INSTAGRAM
+                {instagram}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.linkedin.com/in/ghaith-konbaz-8ab714193/"
               >
-                LINKEDIN
+                {linkedIn}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.facebook.com/ghaithkonbaz/"
               >
-                FACEBOOK
+                {facebook}
               </Link>
               <Link
                 style={theme.custom.accountsLinks}
                 href="https://www.fiverr.com/ghaith37"
               >
-                FIVERR
+                {fiver}
               </Link>
             </Typography>
           </Box>

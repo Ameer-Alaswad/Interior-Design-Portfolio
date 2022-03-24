@@ -28,7 +28,6 @@ const useStyles = makeStyles({
   imagesInCarousel: {
     height: "600px",
     width: "100%",
-    // objectFit: "scale-down",
   },
 });
 

@@ -8,6 +8,8 @@ import BasicMenu from "./DropDownMenu";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ZEUS } from "../../default-colors/colors";
+import text from "../../projects-assets/projectText.json";
+const { home, explore, contract, contact } = text.headerText;
 
 const theme = createTheme({
   custom: {
@@ -39,7 +41,7 @@ export default function Navbar() {
               />
             </Typography>
             <Typography>
-              <Button color="inherit">HOME</Button>
+              <Button color="inherit">{home}</Button>
               <Button
                 className={theme.custom.navbarButtonsMargin}
                 color="inherit"
@@ -50,19 +52,19 @@ export default function Navbar() {
                 className={theme.custom.navbarButtonsMargin}
                 color="inherit"
               >
-                EXPLORE
+                {explore}
               </Button>
               <Button
                 className={theme.custom.navbarButtonsMargin}
                 color="inherit"
               >
-                PROJECTS
+                {contract}
               </Button>
               <Button
                 className={theme.custom.navbarButtonsMargin}
                 color="inherit"
               >
-                CONTRACT
+                {contact}
               </Button>
             </Typography>
           </Toolbar>
