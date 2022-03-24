@@ -1,0 +1,31 @@
+.slide {
+  animation-duration: 3s;
+  animation-name: myAnim;
+}
+@keyframes myAnim {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+
+  15% {
+    transform: translateX(-90px);
+  }
+
+  30% {
+    transform: translateX(15px);
+  }
+
+  45% {
+    transform: translateX(-15px);
+  }
+
+  60% {
+    transform: translateX(9px);
+  }
+
+  75% {
+    transform: translateX(-6px);
+  }
+}

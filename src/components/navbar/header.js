@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -15,9 +15,28 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Divider from "@material-ui/core/Divider";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+import clsx from "clsx";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+
 const useStyles = makeStyles(() => ({
   navbarButtonsMargin: {
     marginRight: "10px",
+  },
+  animatedItem: {
+    animation: `$myEffect 2s 3 ${theme.transitions.easing.easeInOut}`,
+  },
+
+  "@keyframes myEffect": {
+    "0%": {
+      transform: "translateX(0%)",
+    },
+    "15%": {
+      transform: "translateX(30px)",
+    },
+    "60%": {
+      transform: "translateX(-50px)",
+    },
   },
 }));
 
@@ -33,13 +52,42 @@ const theme = createTheme({
       marginTop: "7px",
     },
     menuIconStyling: {
-      color: { WHITE_SOLID },
+      color: WHITE_SOLID,
       fontSize: "2.5rem",
+    },
+    slideIconLeftStyle: {
+      width: "50px",
+      height: "50px",
+      position: "absolute",
+      right: "30px",
+      top: "120px",
+      zIndex: "100",
     },
   },
 });
+
 export default function Navbar() {
+  const theTheme = useTheme();
   const [open, setOpen] = useState(false);
+  const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
+  const screenWidthIsLessThan600px = useMediaQuery(
+    theTheme.breakpoints.down("sm")
+  );
+  const screenWidthIsGreaterThan600px = useMediaQuery(
+    theTheme.breakpoints.up("sm")
+  );
+  function closeAndOpenSlideLeftIcon() {
+    if (screenWidthIsGreaterThan600px) setSlideLeftIconVisiable(true);
+    else if (screenWidthIsLessThan600px) {
+      setTimeout(function () {
+        return setSlideLeftIconVisiable(false);
+      }, 6000);
+    }
+  }
+  useEffect(() => {
+    closeAndOpenSlideLeftIcon();
+  });
+
   const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -105,6 +153,16 @@ export default function Navbar() {
                 CONTRACT
               </Button>
             </SwipeableDrawer>
+            <Hidden smUp>
+              {slideLeftIconVisiable && (
+                <img
+                  className={clsx(classes.animatedItem)}
+                  style={theme.custom.slideIconLeftStyle}
+                  src="/icons/flick-to-left.png"
+                  alt="slide-left-sign"
+                />
+              )}
+            </Hidden>
           </Toolbar>
         </AppBar>
       </ThemeProvider>
