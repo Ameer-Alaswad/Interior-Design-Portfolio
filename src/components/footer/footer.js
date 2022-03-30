@@ -1,20 +1,22 @@
-import * as React from "react";
-import Box from "@mui/material/Box";
-import { logo } from "../../utils/assets";
-import Typography from "@mui/material/Typography";
-import Link from "@mui/material/Link";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
-
-import { makeStyles } from "@mui/styles";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import {
   ZEUS,
   WHITE_SOLID,
   FLINT,
   BLACK_SOLID,
 } from "../../default-colors/colors";
-
+import * as React from "react";
+import Box from "@mui/material/Box";
+import { logo } from "../../utils/assets";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import text from "../../projects-assets/projectText.json";
+import { makeStyles } from "@mui/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
+const { name, jobTitle } = text.footerText.underLogoText;
+const { instagram, linkedIn, facebook, fiver } = text.footerText.socialLinks;
+const { forMoreInformation, emailLink } = text.footerText.contactingEmail;
 const useStyles = makeStyles(() => ({
   contactingByEmail: {
     fontFamily: "'Century Gothic', sans-serif",
@@ -46,7 +48,6 @@ const useStyles = makeStyles(() => ({
     },
   },
 }));
-
 const theme = createTheme({
   custom: {
     footerContainer: {
@@ -143,18 +144,18 @@ export default function Footer() {
                 style={theme.custom.logoInFooter}
               />
               <Typography gutterBottom style={theme.custom.paragraphsUnderLogo}>
-                GHAITH KONBAZ
+                {name}
               </Typography>
               <Typography gutterBottom style={theme.custom.paragraphsUnderLogo}>
-                INTERIOR DESIGN
+                {jobTitle}
               </Typography>
             </Box>
 
             <p className={classes.contactingByEmail}>
-              FOR MORE INFORMATION, EMAIL:
+              {forMoreInformation}
               {matches ? <br /> : false}
               <Link style={theme.custom.emailLinkInSectionTwo}>
-                <em>ghaith.konbaz@gmail.com</em>
+                <em>{emailLink}</em>
               </Link>
               .
             </p>
@@ -167,28 +168,28 @@ export default function Footer() {
                 style={theme.custom.accountsLinks}
                 href="https://www.instagram.com/ghaith37/"
               >
-                INSTAGRAM
+                {instagram}
               </Link>
               <Link
                 className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.linkedin.com/in/ghaith-konbaz-8ab714193/"
               >
-                LINKEDIN
+                {linkedIn}
               </Link>
               <Link
                 className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.facebook.com/ghaithkonbaz/"
               >
-                FACEBOOK
+                {facebook}
               </Link>
               <Link
                 className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.fiverr.com/ghaith37"
               >
-                FIVERR
+                {fiver}
               </Link>
             </Typography>
           </Box>

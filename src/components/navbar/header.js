@@ -92,7 +92,7 @@ export default function Navbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={theme}>
-        <AppBar position="sticky" style={theme.custom.header}>
+        <AppBar style={theme.custom.header}>
           <Toolbar disableGutters>
             <Typography style={{ marginLeft: "15px" }} sx={{ flexGrow: 1 }}>
               <img
