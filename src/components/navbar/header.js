@@ -18,6 +18,8 @@ import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import clsx from "clsx";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
+import text from "../../projects-assets/projectText.json";
+const { home, explore, contract, contact } = text.headerText;
 
 const useStyles = makeStyles(() => ({
   navbarButtonsMargin: {
@@ -103,18 +105,18 @@ export default function Navbar() {
             </Typography>
             <Hidden xsDown>
               <Typography style={{ marginRight: "10px" }}>
-                <Button color="inherit">HOME</Button>
+                <Button color="inherit">{home}</Button>
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   <BasicMenu />
                 </Button>
                 <Button className={classes.navbarButtonsMargin} color="inherit">
-                  EXPLORE
+                  {explore}
                 </Button>
                 <Button className={classes.navbarButtonsMargin} color="inherit">
-                  PROJECTS
+                  {contact}
                 </Button>
                 <Button className={classes.navbarButtonsMargin} color="inherit">
-                  CONTRACT
+                  {contract}
                 </Button>
               </Typography>
             </Hidden>
@@ -139,18 +141,18 @@ export default function Navbar() {
               </div>
               <Divider />
 
-              <Button color="inherit">HOME</Button>
+              <Button color="inherit">{home}</Button>
               <Button className={classes.navbarButtonsMargin} color="inherit">
                 <BasicMenu />
               </Button>
               <Button className={classes.navbarButtonsMargin} color="inherit">
-                EXPLORE
+                {explore}
               </Button>
               <Button className={classes.navbarButtonsMargin} color="inherit">
-                PROJECTS
+                {contact}
               </Button>
               <Button className={classes.navbarButtonsMargin} color="inherit">
-                CONTRACT
+                {contract}
               </Button>
             </SwipeableDrawer>
             <Hidden smUp>
