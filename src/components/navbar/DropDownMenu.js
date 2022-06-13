@@ -1,8 +1,8 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
 import Menu from "@mui/material/Menu";
+import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
-import { WHITE_SOLID } from "../../default-colors/colors";
+import { FLINT } from "../../default-colors/colors";
 import text from "../../projects-assets/projectText.json";
 const { projects } = text.headerText;
 const { profile, myAccount, logout } = text.dropDownMenuText;
@@ -19,18 +19,17 @@ export default function BasicMenu() {
 
   return (
     <div>
-      <Button
+      <Box
         style={{
-          color: { WHITE_SOLID },
+          color: FLINT,
         }}
-        id="basic-button"
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
         aria-expanded={open ? "true" : undefined}
         onClick={handleClick}
       >
         {projects}
-      </Button>
+      </Box>
       <Menu
         id="basic-menu"
         anchorEl={anchorEl}
