@@ -1,7 +1,7 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { FLINT } from "../../default-colors/colors";
+import { CLOUDY } from "../../default-colors/colors";
 import text from "../../projects-assets/projectText.json";
 import Box from "@mui/material/Box";
 
@@ -22,7 +22,7 @@ export default function BasicMenu() {
     <div>
       <Box
         style={{
-          color: FLINT,
+          color: CLOUDY,
         }}
         aria-controls={open ? "basic-menu" : undefined}
         aria-haspopup="true"
