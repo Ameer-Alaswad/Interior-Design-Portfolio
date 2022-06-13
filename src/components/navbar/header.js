@@ -107,7 +107,7 @@ export default function Navbar() {
               <Typography style={{ marginRight: "10px" }}>
                 <Button color="inherit">{home}</Button>
                 <Button className={classes.navbarButtonsMargin} color="inherit">
-                  <BasicMenu />
+                  <BasicMenu className={classes.navbarButtonsMargin} />
                 </Button>
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   {explore}
