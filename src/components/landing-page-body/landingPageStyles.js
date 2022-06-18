@@ -57,6 +57,14 @@ export const theme = createTheme({
       padding: "13px",
       width: "185px",
     },
+    sectionOneStyling: {
+      fontSize: "20px",
+      fontFamily: "'Century Gothic', sans-serif",
+    },
+    sectionTwoStyling: {
+      fontSize: "20px",
+      fontFamily: "'Century Gothic', sans-serif",
+    },
 
     sectionThreeStyling: {
       fontSize: "15px",

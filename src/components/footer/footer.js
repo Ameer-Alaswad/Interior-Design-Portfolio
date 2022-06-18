@@ -11,10 +11,43 @@ import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import text from "../../projects-assets/projectText.json";
+import { makeStyles } from "@mui/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { useTheme } from "@mui/material/styles";
 const { name, jobTitle } = text.footerText.underLogoText;
 const { instagram, linkedIn, facebook, fiver } = text.footerText.socialLinks;
 const { forMoreInformation, emailLink } = text.footerText.contactingEmail;
+const useStyles = makeStyles(() => ({
+  contactingByEmail: {
+    fontFamily: "'Century Gothic', sans-serif",
+    letterSpacing: "5px",
+    fontSize: "18px",
 
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      fontSize: "19px",
+      letterSpacing: "0px",
+    },
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "15px",
+    },
+  },
+  accountsLinksContainer: {
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+  },
+
+  accountsLinks: {
+    [theme.breakpoints.up("md")]: {
+      fontSize: "15px",
+    },
+  },
+}));
 const theme = createTheme({
   custom: {
     footerContainer: {
@@ -64,6 +97,7 @@ const theme = createTheme({
     paragraphsUnderLogo: {
       fontFamily: "'Century Gothic', sans-serif",
       letterSpacing: "5px",
+      fontWeight: "bold",
     },
     emailLinkInSectionTwo: {
       color: ZEUS,
@@ -74,6 +108,7 @@ const theme = createTheme({
       fontWeight: "bold",
       fontFamily: "'Century Gothic', sans-serif",
       marginBottom: "40px",
+      marginRight: "20px",
     },
     accountsLinks: {
       color: BLACK_SOLID,
@@ -84,6 +119,10 @@ const theme = createTheme({
 });
 
 export default function Footer() {
+  const classes = useStyles();
+  const theTheme = useTheme();
+  const matches = useMediaQuery(theTheme.breakpoints.down("sm"));
+
   return (
     <ThemeProvider theme={theme}>
       <Box style={{ width: "100%" }} sx={theme.custom.footerContainer.sx}>
@@ -104,53 +143,49 @@ export default function Footer() {
                 alt="logo-in-footer"
                 style={theme.custom.logoInFooter}
               />
-              <Typography
-                style={theme.custom.paragraphsUnderLogo}
-                variant="h5"
-                gutterBottom
-              >
+              <Typography gutterBottom style={theme.custom.paragraphsUnderLogo}>
                 {name}
               </Typography>
-              <Typography
-                style={theme.custom.paragraphsUnderLogo}
-                variant="h6"
-                gutterBottom
-              >
+              <Typography gutterBottom style={theme.custom.paragraphsUnderLogo}>
                 {jobTitle}
               </Typography>
             </Box>
 
-            <Typography
-              style={theme.custom.paragraphsUnderLogo}
-              variant="h6"
-              gutterBottom
-            >
-              {forMoreInformation}{" "}
+            <p className={classes.contactingByEmail}>
+              {forMoreInformation}
+              {matches ? <br /> : false}
               <Link style={theme.custom.emailLinkInSectionTwo}>
                 <em>{emailLink}</em>
-              </Link>{" "}
+              </Link>
               .
-            </Typography>
-            <Typography style={theme.custom.accountsLinksContainer}>
+            </p>
+            <Typography
+              className={classes.accountsLinksContainer}
+              style={theme.custom.accountsLinksContainer}
+            >
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.instagram.com/ghaith37/"
               >
                 {instagram}
               </Link>
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.linkedin.com/in/ghaith-konbaz-8ab714193/"
               >
                 {linkedIn}
               </Link>
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.facebook.com/ghaithkonbaz/"
               >
                 {facebook}
               </Link>
               <Link
+                className={classes.accountsLinks}
                 style={theme.custom.accountsLinks}
                 href="https://www.fiverr.com/ghaith37"
               >
