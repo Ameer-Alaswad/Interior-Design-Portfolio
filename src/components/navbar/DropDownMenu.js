@@ -1,9 +1,9 @@
 import * as React from "react";
 import Menu from "@mui/material/Menu";
+import Box from "@mui/material/Box";
 import MenuItem from "@mui/material/MenuItem";
 import { CONCRETE } from "../../default-colors/colors";
 import text from "../../projects-assets/projectText.json";
-import Box from "@mui/material/Box";
 
 const { projects } = text.headerText;
 const { profile, myAccount, logout } = text.dropDownMenuText;
