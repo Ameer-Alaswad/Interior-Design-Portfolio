@@ -1,13 +1,22 @@
 import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-
+import itemData from "../../utils/assets";
+const projectImages = itemData;
 const imageListStyles = {
   margin: "0 auto",
-  marginTop: "20px",
-  height: "1020px",
+  marginBottom: "210px",
+  marginTop: "100px",
+  height: "1750px",
   width: "810px",
   overFlow: "visible",
+  padding: "35px 35px",
+};
+const imagesStyles = {
+  objectFit: "fill",
+  height: "100%",
+  width: "100%",
+  position: "absolute",
 };
 
 function srcset(image, size, rows = 1, cols = 1) {
@@ -20,6 +29,28 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 
 export default function ExploreProjects() {
+  const handleHover = (e) => {
+    // console.log(e.target.parentNode.children);
+    const children = e.target.parentNode.parentNode.children;
+    for (let i = 0; i < children.length; i++) {
+      const element = children[i];
+      // console.log(element.children[0]);
+      if (element.children[0] === e.target) {
+        console.log(element.children[0]);
+        e.target.style.zIndex = "10";
+      } else {
+        element.children[0].style.zIndex = "1";
+      }
+    }
+
+    e.target.style.transform = "scale(1.2)";
+    // e.target.style.position = "absolute";
+  };
+  const handleMouseLeave = (e) => {
+    // e.target.style.zIndex = "10";
+
+    e.target.style.transform = "none";
+  };
   return (
     <ImageList
       sx={{ width: 500, height: 450 }}
@@ -28,19 +59,17 @@ export default function ExploreProjects() {
       rowHeight={165}
       style={imageListStyles}
     >
-      {itemData.map((item, index) => (
+      {projectImages.map((item, index) => (
         <ImageListItem
           key={item.img}
           cols={item.cols || 1}
           rows={item.rows || 1}
         >
           <img
+            onMouseEnter={handleHover}
+            onMouseLeave={handleMouseLeave}
             key={index}
-            style={{
-              objectFit: "fill",
-              height: "100%",
-              width: "100%",
-            }}
+            style={imagesStyles}
             {...srcset(item.img, 121, item.rows, item.cols)}
             alt={item.title}
             loading="lazy"
@@ -50,64 +79,3 @@ export default function ExploreProjects() {
     </ImageList>
   );
 }
-
-const itemData = [
-  {
-    img: "/carousel/pic3.png",
-    title: "Breakfast",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "/carousel/pic2.png",
-    title: "Burger",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
-    title: "Camera",
-  },
-  {
-    img: "/carousel/pic3.png",
-    title: "Coffee",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1533827432537-70133748f5c8",
-    title: "Hats",
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1558642452-9d2a7deb7f62",
-    title: "Honey",
-    author: "@arwinneil",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
-    title: "Basketball",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
-    title: "Fern",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1597645587822-e99fa5d45d25",
-    title: "Mushrooms",
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: "https://images.unsplash.com/photo-1567306301408-9b74779a11af",
-    title: "Tomato basil",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1471357674240-e1a485acb3e1",
-    title: "Sea star",
-  },
-  {
-    img: "https://images.unsplash.com/photo-1589118949245-7d38baf380d6",
-    title: "Bike",
-    cols: 2,
-  },
-];
