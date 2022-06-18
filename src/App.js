@@ -10,9 +10,9 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-        {/* <PhotosGallery /> */}
-        {/* <LandingPageBody />
-        <Footer /> */}
+        <PhotosGallery />
+        <LandingPageBody />
+        <Footer />
       </div>
     </BrowserRouter>
   );

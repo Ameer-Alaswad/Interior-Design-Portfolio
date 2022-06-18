@@ -26,11 +26,14 @@ export default function LandingPageBody() {
         style={theme.custom.LandingPageBodyContainer}
         sx={theme.custom.LandingPageBodyContainer.sx}
       >
-        <Typography className={classes.sectionOneStyling}>
+        <Typography
+          style={theme.custom.sectionOneStyling}
+          className={classes.sectionOneStyling}
+        >
           {sectionOneText.line1SectionOne}
           {!matches ? <br /> : false}
           {sectionOneText.line2SectionOne}
-          <Stack spacing={2} direction="row">
+          <Stack component={"span"} spacing={2} direction="row">
             <Button
               data-test-id="view-projects-button"
               style={theme.custom.viewProjectsButton}
@@ -39,10 +42,14 @@ export default function LandingPageBody() {
               {sectionOneText.buttonTextSectionOne}
             </Button>
           </Stack>
-          <div style={theme.custom.sectionsWrapper}></div>
+
+          <span style={theme.custom.sectionsWrapper}></span>
         </Typography>
-        <Typography style={{ marginTop: "40px" }}>
-          <Typography className={classes.sectionTwo}>
+        <Typography component={"span"} style={{ marginTop: "40px" }}>
+          <Typography
+            style={theme.custom.sectionTwoStyling}
+            className={classes.sectionTwo}
+          >
             {sectionTwoText.line1SectionTwo}
             {!matches ? <br /> : false}
             {sectionTwoText.line2SectionTwo}
@@ -50,9 +57,9 @@ export default function LandingPageBody() {
             {sectionTwoText.line3SectionTwo}
           </Typography>
 
-          <div style={theme.custom.sectionsWrapper}></div>
+          <span style={theme.custom.sectionsWrapper}></span>
         </Typography>
-        <Typography style={{ marginTop: "40px" }}>
+        <Typography component={"span"} style={{ marginTop: "40px" }}>
           <Typography style={theme.custom.sectionThreeStyling}>
             {sectionThreeText.line1SectionThree}
             {!matches ? <br /> : false}
@@ -63,10 +70,10 @@ export default function LandingPageBody() {
             {sectionThreeText.line3SectionThree}
           </Typography>
 
-          <div style={theme.custom.sectionsWrapper}></div>
+          <span style={theme.custom.sectionsWrapper}></span>
         </Typography>
-        <div style={{ height: "200px" }}>
-          <Stack spacing={2} direction="row">
+        <span style={{ height: "200px" }}>
+          <Stack component={"span"} spacing={2} direction="row">
             <Button
               data-test-id="contact-us-button"
               style={theme.custom.weLoveToHearAboutYourProjectButton}
@@ -75,7 +82,7 @@ export default function LandingPageBody() {
               {weLoveToHearAboutYourProjectButtonText}
             </Button>
           </Stack>
-        </div>
+        </span>
       </Box>
     </ThemeProvider>
   );

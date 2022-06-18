@@ -121,11 +121,8 @@ export default function Navbar() {
               </Typography>
             </Hidden>
             <Hidden smUp>
-              <IconButton>
-                <MenuIcon
-                  style={theme.custom.menuIconStyling}
-                  onClick={() => setOpen(true)}
-                />
+              <IconButton onClick={() => setOpen(true)}>
+                <MenuIcon style={theme.custom.menuIconStyling} />
               </IconButton>
             </Hidden>
             <SwipeableDrawer
@@ -135,8 +132,8 @@ export default function Navbar() {
               onClose={() => setOpen(false)}
             >
               <div>
-                <IconButton>
-                  <ChevronRightIcon onClick={() => setOpen(false)} />
+                <IconButton onClick={() => setOpen(false)}>
+                  <ChevronRightIcon />
                 </IconButton>
               </div>
               <Divider />
