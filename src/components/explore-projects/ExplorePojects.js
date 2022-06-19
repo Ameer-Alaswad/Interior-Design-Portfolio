@@ -1,6 +1,7 @@
 import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
+import ImageDisplay from "./imageDisplay";
 import itemData from "../../utils/assets";
 import {
   imageListStyles,
@@ -21,7 +22,8 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 
 export default function ExploreProjects() {
-  const setStylesOnImage = function (styles, element) {
+  const [visible, setVisible] = React.useState(false);
+  const setStylesOnImage = (styles, element) => {
     Object.assign(element.style, styles);
   };
   const handleHover = (e) => {
@@ -40,31 +42,38 @@ export default function ExploreProjects() {
     const hoveredImage = e.target;
     setStylesOnImage(onMouseLeaveStyle, hoveredImage);
   };
+  const handleOnClick = (e) => {
+    setVisible(true);
+  };
   return (
-    <ImageList
-      sx={{ width: 500, height: 450 }}
-      variant="quilted"
-      cols={4}
-      rowHeight={165}
-      style={imageListStyles}
-    >
-      {projectImages.map((item, index) => (
-        <ImageListItem
-          key={item.img}
-          cols={item.cols || 1}
-          rows={item.rows || 1}
-        >
-          <img
-            onMouseEnter={handleHover}
-            onMouseLeave={handleMouseLeave}
-            key={index}
-            style={imagesStyles}
-            {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item.title}
-            loading="lazy"
-          />
-        </ImageListItem>
-      ))}
-    </ImageList>
+    <div>
+      <ImageList
+        sx={{ width: 500, height: 450 }}
+        variant="quilted"
+        cols={4}
+        rowHeight={165}
+        style={imageListStyles}
+      >
+        {projectImages.map((item, index) => (
+          <ImageListItem
+            key={item.img}
+            cols={item.cols || 1}
+            rows={item.rows || 1}
+          >
+            <img
+              onMouseEnter={handleHover}
+              onMouseLeave={handleMouseLeave}
+              onClick={handleOnClick}
+              key={index}
+              style={imagesStyles}
+              {...srcset(item.img, 121, item.rows, item.cols)}
+              alt={item.title}
+              loading="lazy"
+            />
+          </ImageListItem>
+        ))}
+      </ImageList>
+      {visible && <ImageDisplay visible={visible} setVisible={setVisible} />}
+    </div>
   );
 }

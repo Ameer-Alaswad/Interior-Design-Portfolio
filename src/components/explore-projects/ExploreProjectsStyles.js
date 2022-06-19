@@ -1,3 +1,4 @@
+import { WHITE_SOLID } from "../../default-colors/colors";
 export const imageListStyles = {
   margin: "0 auto",
   marginBottom: "210px",
@@ -16,7 +17,7 @@ export const onHoverClass = {
   zIndex: "10",
   transform: "scale(1.2)",
   cursor: "pointer",
-  boxShadow: "-1px 3px 8px 5px white",
+  boxShadow: `-1px 3px 8px 5px ${WHITE_SOLID}`,
 };
 export const onMouseLeaveStyle = {
   transform: "none",
