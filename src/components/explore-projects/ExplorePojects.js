@@ -23,6 +23,7 @@ function srcset(image, size, rows = 1, cols = 1) {
 
 export default function ExploreProjects() {
   const [visible, setVisible] = React.useState(false);
+  const [image, setImage] = React.useState();
   const setStylesOnImage = (styles, element) => {
     Object.assign(element.style, styles);
   };
@@ -43,7 +44,9 @@ export default function ExploreProjects() {
     setStylesOnImage(onMouseLeaveStyle, hoveredImage);
   };
   const handleOnClick = (e) => {
+    const image = e.target;
     setVisible(true);
+    setImage(image);
   };
   return (
     <div>
@@ -73,7 +76,13 @@ export default function ExploreProjects() {
           </ImageListItem>
         ))}
       </ImageList>
-      {visible && <ImageDisplay visible={visible} setVisible={setVisible} />}
+      {visible && (
+        <ImageDisplay
+          visible={visible}
+          setVisible={setVisible}
+          image={image.src}
+        />
+      )}
     </div>
   );
 }
