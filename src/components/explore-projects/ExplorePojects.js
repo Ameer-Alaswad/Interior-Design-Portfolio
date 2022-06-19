@@ -2,22 +2,14 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import itemData from "../../utils/assets";
+import {
+  imageListStyles,
+  imagesStyles,
+  onHoverClass,
+  onMouseLeaveStyle,
+  noneHoveredImagesStyle,
+} from "./ExploreProjectsStyles";
 const projectImages = itemData;
-const imageListStyles = {
-  margin: "0 auto",
-  marginBottom: "210px",
-  marginTop: "100px",
-  height: "1750px",
-  width: "810px",
-  overFlow: "visible",
-  padding: "35px 35px",
-};
-const imagesStyles = {
-  objectFit: "fill",
-  height: "100%",
-  width: "100%",
-  position: "absolute",
-};
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -29,27 +21,24 @@ function srcset(image, size, rows = 1, cols = 1) {
 }
 
 export default function ExploreProjects() {
+  const setStylesOnImage = function (styles, element) {
+    Object.assign(element.style, styles);
+  };
   const handleHover = (e) => {
-    // console.log(e.target.parentNode.children);
-    const children = e.target.parentNode.parentNode.children;
-    for (let i = 0; i < children.length; i++) {
-      const element = children[i];
-      // console.log(element.children[0]);
-      if (element.children[0] === e.target) {
-        console.log(element.children[0]);
-        e.target.style.zIndex = "10";
+    const imagesList = e.target.parentNode.parentNode.children;
+    [...imagesList].map((imageList) => {
+      const image = imageList.children[0];
+      const hoveredImage = e.target;
+      if (image === hoveredImage) {
+        setStylesOnImage(onHoverClass, hoveredImage);
       } else {
-        element.children[0].style.zIndex = "1";
+        setStylesOnImage(noneHoveredImagesStyle, image);
       }
-    }
-
-    e.target.style.transform = "scale(1.2)";
-    // e.target.style.position = "absolute";
+    });
   };
   const handleMouseLeave = (e) => {
-    // e.target.style.zIndex = "10";
-
-    e.target.style.transform = "none";
+    const hoveredImage = e.target;
+    setStylesOnImage(onMouseLeaveStyle, hoveredImage);
   };
   return (
     <ImageList
