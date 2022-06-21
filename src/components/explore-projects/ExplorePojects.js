@@ -2,16 +2,21 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ImageDisplay from "./imageDisplay";
-import itemData from "../../utils/assets";
+import projectData from "../../utils/assets";
+import {
+  setStyesOnProjectImage,
+  handleHoverLogic,
+  handleResponsiveness,
+} from "./ExploreProjectUtils";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import {
-  listStyles,
-  imagesStyles,
+  projectImagesContainer,
+  projectImagesStyles,
   onHoverClass,
   onMouseLeaveStyle,
-  noneHoveredImagesStyle,
+  noneHoveredProjectImagesStyle,
 } from "./ExploreProjectsStyles";
-const projectImages = itemData;
+const projectImages = projectData;
 
 function srcset(image, size, rows = 1, cols = 1) {
   return {
@@ -22,63 +27,44 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 const ExploreProjects = () => {
-  const imagesStyle = { ...imagesStyles };
-  const listStyle = { ...listStyles };
+  // handles the visibility of the popup
+  const [visible, setVisible] = React.useState(false);
+  const [image, setImage] = React.useState();
+
+  const projectImagesStyle = { ...projectImagesStyles };
+  const ImagesContainer = { ...projectImagesContainer };
   const matches = useMediaQuery("(max-width:860px)");
   const matches2 = useMediaQuery("(max-width:720px)");
   const matches3 = useMediaQuery("(max-width:525px)");
   const matches4 = useMediaQuery("(max-width:390px)");
-  const imageListItem = {};
-  if (matches) {
-    listStyle.gridTemplateColumns = "repeat(2, 1fr)";
-    listStyle.height = "3400px";
-    listStyle.width = "650px";
-  }
-  if (matches2) {
-    listStyle.width = "450px";
-    listStyle.gridTemplateColumns = "repeat(1, 1fr)";
-    imageListItem.gridColumnEnd = "auto";
-    listStyle.height = "4300px";
-  }
-  if (matches3) {
-    listStyle.width = "320px";
-    listStyle.height = "3400px";
-
-    imageListItem.height = "210px";
-    imageListItem.gridColumnEnd = "auto";
-    listStyle.height = "4400px";
-  }
-  if (matches4) {
-    imageListItem.height = "150px";
-    listStyle.height = "3200px";
-
-    listStyle.width = "210px";
-  }
-  const [visible, setVisible] = React.useState(false);
-  const [image, setImage] = React.useState();
-  const setStylesOnImage = (styles, element) => {
-    Object.assign(element.style, styles);
+  let props = {
+    visible: visible,
+    setVisible: setVisible,
+    image: image,
   };
+  // all images are wrapped in lists and the lists are wrapped in an container
+  const projectImagesLists = {};
+
+  handleResponsiveness(
+    matches,
+    matches2,
+    matches3,
+    matches4,
+    ImagesContainer,
+    projectImagesLists
+  );
+  // These functions handle actions on the images in exploreProject page.
   const handleHover = (e) => {
-    const imagesList = e.target.parentNode.parentNode.children;
-    [...imagesList].map((imageList) => {
-      const image = imageList.children[0];
-      const hoveredImage = e.target;
-      if (image === hoveredImage) {
-        setStylesOnImage(onHoverClass, hoveredImage);
-      } else {
-        setStylesOnImage(noneHoveredImagesStyle, image);
-      }
-    });
+    handleHoverLogic(e, onHoverClass, noneHoveredProjectImagesStyle);
   };
   const handleMouseLeave = (e) => {
     const hoveredImage = e.target;
-    setStylesOnImage(onMouseLeaveStyle, hoveredImage);
+    setStyesOnProjectImage(onMouseLeaveStyle, hoveredImage);
   };
   const handleOnClick = (e) => {
     const image = e.target;
     setVisible(true);
-    setImage(image);
+    setImage(image.src);
   };
   return (
     <div>
@@ -87,35 +73,28 @@ const ExploreProjects = () => {
         variant="quilted"
         cols={4}
         rowHeight={165}
-        style={listStyle}
+        style={ImagesContainer}
       >
         {projectImages.map((item, index) => (
           <ImageListItem
             key={item.img}
             cols={item.cols || 1}
             rows={item.rows || 1}
-            style={imageListItem}
+            style={projectImagesLists}
           >
             <img
               onMouseEnter={handleHover}
               onMouseLeave={handleMouseLeave}
               onClick={handleOnClick}
               key={index}
-              style={imagesStyle}
+              style={projectImagesStyle}
               {...srcset(item.img, 121, item.rows, item.cols)}
               alt={item.title}
-              loading="lazy"
             />
           </ImageListItem>
         ))}
       </ImageList>
-      {visible && (
-        <ImageDisplay
-          visible={visible}
-          setVisible={setVisible}
-          image={image.src}
-        />
-      )}
+      {visible && <ImageDisplay {...props} />}
     </div>
   );
 };

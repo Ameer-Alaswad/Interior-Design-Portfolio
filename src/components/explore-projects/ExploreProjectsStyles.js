@@ -1,12 +1,4 @@
-export const styles = (theme) => ({
-  custom: {
-    objectFit: "cover",
-    height: "100%",
-    width: "100%",
-    position: "absolute",
-  },
-});
-export const imagesStyles = {
+export const projectImagesStyles = {
   objectFit: "cover",
   height: "100%",
   width: "100%",
@@ -21,15 +13,15 @@ export const onMouseLeaveStyle = {
   transform: "none",
   boxShadow: "none",
 };
-export const noneHoveredImagesStyle = {
+export const noneHoveredProjectImagesStyle = {
   zIndex: "1",
   boxShadow: "none",
 };
-export const listStyles = {
+export const projectImagesContainer = {
   margin: "0 auto",
   marginBottom: "210px",
   height: "1700px",
   width: "810px",
   overFlow: "visible",
-  padding: "35px 35px",
+  padding: "50px 50px",
 };

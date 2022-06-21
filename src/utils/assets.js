@@ -1,9 +1,8 @@
 export const logo =
   "https://cdn.discordapp.com/attachments/301094964086177792/941783904879276073/LOGO.png";
-const itemData = [
+const projectData = [
   {
     img: "/Plenary/5.Front.png",
-    title: "Breakfast",
     rows: 2,
     cols: 2,
   },
@@ -19,7 +18,6 @@ const itemData = [
   },
   {
     img: "/Cube/1.png",
-    title: "Hats",
     cols: 2,
   },
   {
@@ -29,11 +27,9 @@ const itemData = [
   },
   {
     img: "/Plenary/6.png",
-    title: "Basketball",
   },
   {
     img: "/Cube/2.png",
-    title: "Fern",
   },
   {
     img: "/Cube/3.png",
@@ -43,15 +39,12 @@ const itemData = [
   },
   {
     img: "/Cube/4.png",
-    title: "Tomato basil",
   },
   {
     img: "/Cube/5.png",
-    title: "Sea star",
   },
   {
     img: "/Cube/6.png",
-    title: "Bike",
     cols: 2,
   },
   {
@@ -71,7 +64,6 @@ const itemData = [
   },
   {
     img: "/Unpretentious/4.Front.png",
-    title: "Hats",
     cols: 2,
   },
   {
@@ -81,11 +73,9 @@ const itemData = [
   },
   {
     img: "/Unpretentious/3.png",
-    title: "Basketball",
   },
   {
     img: "/Unpretentious/5.png",
-    title: "Fern",
   },
 ];
-export default itemData;
+export default projectData;
