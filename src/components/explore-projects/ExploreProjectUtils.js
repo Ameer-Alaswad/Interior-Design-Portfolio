@@ -49,3 +49,42 @@ export const handleResponsiveness = (
     listStyle.width = "210px";
   }
 };
+export const handleImageDisplayPoupupResponsiveness = (
+  image,
+  imageContainerStyle,
+  imageStyles,
+  closeProjectButtonStyles,
+  matches2,
+  matches
+) => {
+  if (image.src.includes("Plenary/6.png")) {
+    imageContainerStyle.display = "flex";
+    imageContainerStyle.flexDirection = "column";
+    imageContainerStyle.alignItems = "center";
+    imageStyles.objectFit = "cover";
+    imageStyles.width = "360px";
+    imageStyles.height = "800px";
+    imageContainerStyle.width = imageStyles.width;
+    imageContainerStyle.height = imageStyles.height;
+    closeProjectButtonStyles.marginTop = "3px";
+  }
+
+  if (matches2 && image.src.includes("Plenary/6.png")) {
+    imageStyles.width = "250px";
+    imageStyles.height = "500px";
+    imageContainerStyle.width = imageStyles.width;
+    imageContainerStyle.height = imageStyles.height;
+  }
+  if (matches && !image.src.includes("Plenary/6.png")) {
+    imageStyles.width = "450px";
+    imageContainerStyle.width = imageStyles.width;
+    imageStyles.height = "280px";
+    imageContainerStyle.height = imageStyles.height;
+  }
+  if (matches2 && !image.src.includes("Plenary/6.png")) {
+    imageStyles.width = "280px";
+    imageContainerStyle.width = imageStyles.width;
+    imageStyles.height = "150px";
+    imageContainerStyle.height = imageStyles.height;
+  }
+};

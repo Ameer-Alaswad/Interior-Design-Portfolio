@@ -61,10 +61,10 @@ const ExploreProjects = () => {
     const hoveredImage = e.target;
     setStyesOnProjectImage(onMouseLeaveStyle, hoveredImage);
   };
-  const handleOnClick = (e) => {
+  const handleClick = (e) => {
     const image = e.target;
     setVisible(true);
-    setImage(image.src);
+    setImage(image);
   };
   return (
     <div>
@@ -85,7 +85,7 @@ const ExploreProjects = () => {
             <img
               onMouseEnter={handleHover}
               onMouseLeave={handleMouseLeave}
-              onClick={handleOnClick}
+              onClick={handleClick}
               key={index}
               style={projectImagesStyle}
               {...srcset(item.img, 121, item.rows, item.cols)}
