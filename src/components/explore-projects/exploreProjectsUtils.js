@@ -1,20 +1,17 @@
-export const setStyesOnProjectImage = (styles, element, imageList) => {
+const setStyesOnProjectImage = (styles, element, e) => {
   Object.assign(element.style, styles);
 };
-export const handleHoverLogic = (
+const handleHoverLogic = (
   e,
   onHoverClass,
   noneHoveredProjectImagesStyle,
-  setLayoutVisible,
-  projectImagesLists
+  setLayoutVisible
 ) => {
   const imagesList = e.target.parentNode.parentNode.children;
   [...imagesList].map((imageList) => {
-    // console.log(imageList.children[0]);
     const image = imageList.children[0];
     let hoveredImage = e.target;
-    // image.style.zIndex = "5";
-    imageList.style.zIndex = "9";
+    imageList.style.zIndex = "3";
     image.style.opacity = "0.5";
     if (image === hoveredImage) {
       hoveredImage = hoveredImage.parentNode;
@@ -23,8 +20,9 @@ export const handleHoverLogic = (
     }
     setStyesOnProjectImage(noneHoveredProjectImagesStyle, image);
   });
+  setLayoutVisible(true);
 };
-export const handleResponsiveness = (
+const handleResponsiveness = (
   matches,
   matches2,
   matches3,
@@ -58,7 +56,7 @@ export const handleResponsiveness = (
     listStyle.width = "210px";
   }
 };
-export const handleImageDisplayPoupupResponsiveness = (
+const handleImageDisplayPopupResponsiveness = (
   image,
   imageContainerStyle,
   imageStyles,
@@ -97,3 +95,21 @@ export const handleImageDisplayPoupupResponsiveness = (
     imageContainerStyle.height = imageStyles.height;
   }
 };
+
+const handleProjectImagesGrid = (image, size, rows = 1, cols = 1) => {
+  return {
+    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
+    srcSet: `${image}?w=${size * cols}&h=${
+      size * rows
+    }&fit=crop&auto=format&dpr=2 2x`,
+  };
+};
+
+const exploreProjectsUtils = {
+  handleProjectImagesGrid,
+  handleImageDisplayPopupResponsiveness,
+  handleResponsiveness,
+  handleHoverLogic,
+  setStyesOnProjectImage,
+};
+export default exploreProjectsUtils;

@@ -1,52 +1,35 @@
 import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import ProjectImageDisplay from "./projectImageDisplay";
+import ProjectImageDisplay from "./project-image-display/ProjectImageDisplay";
 import projectData from "../../utils/assets";
-import {
-  setStyesOnProjectImage,
-  handleHoverLogic,
-  handleResponsiveness,
-} from "./ExploreProjectUtils";
+import exploreProjectsStyles from "./exploreProjectsStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import {
-  projectImagesContainer,
-  projectImagesStyles,
-  onHoverClass,
-  onMouseLeaveStyle,
-  noneHoveredProjectImagesStyle,
-} from "./ExploreProjectsStyles";
+import exploreProjectsUtils from "./exploreProjectsUtils";
 const projectImages = projectData;
 
-function srcset(image, size, rows = 1, cols = 1) {
-  return {
-    src: `${image}?w=${size * cols}&h=${size * rows}&fit=crop&auto=format`,
-    srcSet: `${image}?w=${size * cols}&h=${
-      size * rows
-    }&fit=crop&auto=format&dpr=2 2x`,
-  };
-}
+exploreProjectsUtils.handleProjectImagesGrid();
 const ExploreProjects = () => {
   // handles the visibility of the popup
   const [visible, setVisible] = React.useState(false);
   const [image, setImage] = React.useState();
   const [layoutVisible, setLayoutVisible] = React.useState(false);
 
-  const projectImagesStyle = { ...projectImagesStyles };
-  const ImagesContainer = { ...projectImagesContainer };
+  const projectImagesStyle = { ...exploreProjectsStyles.projectImagesStyles };
+  const ImagesContainer = { ...exploreProjectsStyles.projectImagesContainer };
   const matches = useMediaQuery("(max-width:860px)");
   const matches2 = useMediaQuery("(max-width:720px)");
   const matches3 = useMediaQuery("(max-width:525px)");
   const matches4 = useMediaQuery("(max-width:390px)");
+  const projectImagesLists = {};
   let props = {
     visible: visible,
     setVisible: setVisible,
     image: image,
   };
-  // all images are wrapped in lists and the lists are wrapped in an container
-  const projectImagesLists = {};
+  // All images are wrapped in lists and lists are wrapped a container.
 
-  handleResponsiveness(
+  exploreProjectsUtils.handleResponsiveness(
     matches,
     matches2,
     matches3,
@@ -54,13 +37,12 @@ const ExploreProjects = () => {
     ImagesContainer,
     projectImagesLists
   );
-  // These functions handle actions on the images in exploreProject page.
+  // These functions handle actions on the images in exploreProjects page.
   const handleHover = (e) => {
-    setLayoutVisible(true);
-    handleHoverLogic(
+    exploreProjectsUtils.handleHoverLogic(
       e,
-      onHoverClass,
-      noneHoveredProjectImagesStyle,
+      exploreProjectsStyles.onHoverClass,
+      exploreProjectsStyles.noneHoveredProjectImagesStyle,
       setLayoutVisible,
       projectImagesLists
     );
@@ -69,12 +51,17 @@ const ExploreProjects = () => {
     const imagesList = e.target.parentNode.parentNode.children;
     [...imagesList].map((imageList) => {
       const image = imageList.children[0];
-      image.style.opacity = "1";
       const hoveredImage = e.target.parentNode;
-      setStyesOnProjectImage(onMouseLeaveStyle, hoveredImage, setLayoutVisible);
+      image.style.opacity = "1";
+      exploreProjectsUtils.setStyesOnProjectImage(
+        exploreProjectsStyles.onMouseLeaveStyle,
+        hoveredImage,
+        e
+      );
     });
     setLayoutVisible(false);
   };
+  // When an image gets clicked it gets displayed in a div by this handler.
   const handleClick = (e) => {
     const image = e.target;
     setVisible(true);
@@ -102,27 +89,19 @@ const ExploreProjects = () => {
               onClick={handleClick}
               key={index}
               style={projectImagesStyle}
-              {...srcset(item.img, 121, item.rows, item.cols)}
+              {...exploreProjectsUtils.handleProjectImagesGrid(
+                item.img,
+                121,
+                item.rows,
+                item.cols
+              )}
               alt={item.title}
             />
           </ImageListItem>
         ))}
       </ImageList>
       {layoutVisible && (
-        <div
-          style={{
-            position: "absolute",
-            backgroundColor: "black",
-            opacity: "0.5",
-            height: "302vh",
-            width: "100vw",
-            zIndex: "2",
-            top: "0px",
-            right: "0px",
-            bottom: "0px",
-            left: "0px",
-          }}
-        ></div>
+        <div style={exploreProjectsStyles.projectImagesLayout}></div>
       )}
       {visible && <ProjectImageDisplay {...props} />}
     </div>
