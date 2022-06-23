@@ -1,17 +1,26 @@
-export const setStyesOnProjectImage = (styles, element) => {
+export const setStyesOnProjectImage = (styles, element, imageList) => {
   Object.assign(element.style, styles);
 };
 export const handleHoverLogic = (
   e,
   onHoverClass,
-  noneHoveredProjectImagesStyle
+  noneHoveredProjectImagesStyle,
+  setLayoutVisible,
+  projectImagesLists
 ) => {
   const imagesList = e.target.parentNode.parentNode.children;
   [...imagesList].map((imageList) => {
+    // console.log(imageList.children[0]);
     const image = imageList.children[0];
-    const hoveredImage = e.target;
-    if (image === hoveredImage)
-      return setStyesOnProjectImage(onHoverClass, hoveredImage);
+    let hoveredImage = e.target;
+    // image.style.zIndex = "5";
+    imageList.style.zIndex = "9";
+    image.style.opacity = "0.5";
+    if (image === hoveredImage) {
+      hoveredImage = hoveredImage.parentNode;
+      e.target.style.opacity = "1";
+      return setStyesOnProjectImage(onHoverClass, hoveredImage, imageList);
+    }
     setStyesOnProjectImage(noneHoveredProjectImagesStyle, image);
   });
 };

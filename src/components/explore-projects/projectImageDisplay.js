@@ -44,7 +44,7 @@ const imageStyle = {
   height: "492px",
 };
 
-export default function ImageDisplay({ visible, setVisible, image }) {
+export default function ProjectImageDisplay({ visible, setVisible, image }) {
   const matches = useMediaQuery("(max-width:860px)");
   const matches2 = useMediaQuery("(max-width:450px)");
   const projectImageContainerStyle = { ...style };

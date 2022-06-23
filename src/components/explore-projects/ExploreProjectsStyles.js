@@ -7,11 +7,15 @@ export const projectImagesStyles = {
 export const onHoverClass = {
   zIndex: "10",
   transform: "scale(1.2)",
+  transition: "transform 0.4s ease-in-out",
   cursor: "pointer",
+  opacity: "1",
 };
 export const onMouseLeaveStyle = {
+  zIndex: "10",
   transform: "none",
   boxShadow: "none",
+  opacity: "1",
 };
 export const noneHoveredProjectImagesStyle = {
   zIndex: "1",

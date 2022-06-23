@@ -1,7 +1,7 @@
 import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
-import ImageDisplay from "./imageDisplay";
+import ProjectImageDisplay from "./projectImageDisplay";
 import projectData from "../../utils/assets";
 import {
   setStyesOnProjectImage,
@@ -30,6 +30,7 @@ const ExploreProjects = () => {
   // handles the visibility of the popup
   const [visible, setVisible] = React.useState(false);
   const [image, setImage] = React.useState();
+  const [layoutVisible, setLayoutVisible] = React.useState(false);
 
   const projectImagesStyle = { ...projectImagesStyles };
   const ImagesContainer = { ...projectImagesContainer };
@@ -55,11 +56,24 @@ const ExploreProjects = () => {
   );
   // These functions handle actions on the images in exploreProject page.
   const handleHover = (e) => {
-    handleHoverLogic(e, onHoverClass, noneHoveredProjectImagesStyle);
+    setLayoutVisible(true);
+    handleHoverLogic(
+      e,
+      onHoverClass,
+      noneHoveredProjectImagesStyle,
+      setLayoutVisible,
+      projectImagesLists
+    );
   };
   const handleMouseLeave = (e) => {
-    const hoveredImage = e.target;
-    setStyesOnProjectImage(onMouseLeaveStyle, hoveredImage);
+    const imagesList = e.target.parentNode.parentNode.children;
+    [...imagesList].map((imageList) => {
+      const image = imageList.children[0];
+      image.style.opacity = "1";
+      const hoveredImage = e.target.parentNode;
+      setStyesOnProjectImage(onMouseLeaveStyle, hoveredImage, setLayoutVisible);
+    });
+    setLayoutVisible(false);
   };
   const handleClick = (e) => {
     const image = e.target;
@@ -94,7 +108,23 @@ const ExploreProjects = () => {
           </ImageListItem>
         ))}
       </ImageList>
-      {visible && <ImageDisplay {...props} />}
+      {layoutVisible && (
+        <div
+          style={{
+            position: "absolute",
+            backgroundColor: "black",
+            opacity: "0.5",
+            height: "302vh",
+            width: "100vw",
+            zIndex: "2",
+            top: "0px",
+            right: "0px",
+            bottom: "0px",
+            left: "0px",
+          }}
+        ></div>
+      )}
+      {visible && <ProjectImageDisplay {...props} />}
     </div>
   );
 };
