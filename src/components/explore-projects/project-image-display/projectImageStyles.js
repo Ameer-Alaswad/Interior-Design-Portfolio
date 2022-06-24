@@ -23,7 +23,7 @@ const buttonsContainerStyle = {
 };
 const checkProjectButtonStyle = {
   fontWeight: "bold",
-  marginBottom: "3px",
+  marginBottom: "8px",
   color: "black",
   paddingTop: "15px",
   lineHeight: "5px",

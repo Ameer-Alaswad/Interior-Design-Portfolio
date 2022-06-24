@@ -17,10 +17,14 @@ export default function ProjectImageDisplay({ visible, setVisible, image }) {
   const projectCloseButtonStyles = {
     ...projectImageStyles.closeProjectButtonStyle,
   };
+  const checkProjectButtonStyles = {
+    ...projectImageStyles.checkProjectButtonStyle,
+  };
   exploreProjectsUtils.handleImageDisplayPopupResponsiveness(
+    checkProjectButtonStyles,
     image,
     projectImageContainerStyle,
-    projectImageStyles,
+    projectImageStyle,
     projectCloseButtonStyles,
     matches2,
     matches
@@ -56,9 +60,7 @@ export default function ProjectImageDisplay({ visible, setVisible, image }) {
                 src="/icons/close.png"
               />
             </button>
-            <Button style={projectImageStyles.checkProjectButtonStyle}>
-              Check Project!
-            </Button>
+            <Button style={checkProjectButtonStyles}>View Project</Button>
           </Box>
         </Box>
       </Modal>

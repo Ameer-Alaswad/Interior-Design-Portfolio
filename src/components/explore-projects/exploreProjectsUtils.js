@@ -57,6 +57,7 @@ const handleResponsiveness = (
   }
 };
 const handleImageDisplayPopupResponsiveness = (
+  checkProjectButtonStyles,
   image,
   imageContainerStyle,
   imageStyles,
@@ -77,6 +78,8 @@ const handleImageDisplayPopupResponsiveness = (
   }
 
   if (matches2 && image.src.includes("Plenary/6.png")) {
+    checkProjectButtonStyles.fontSize = "11px";
+
     imageStyles.width = "250px";
     imageStyles.height = "500px";
     imageContainerStyle.width = imageStyles.width;
@@ -89,6 +92,7 @@ const handleImageDisplayPopupResponsiveness = (
     imageContainerStyle.height = imageStyles.height;
   }
   if (matches2 && !image.src.includes("Plenary/6.png")) {
+    checkProjectButtonStyles.fontSize = "11px";
     imageStyles.width = "280px";
     imageContainerStyle.width = imageStyles.width;
     imageStyles.height = "150px";
