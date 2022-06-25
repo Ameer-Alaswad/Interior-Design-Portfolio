@@ -2,11 +2,10 @@ import * as React from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ProjectImageDisplay from "./project-image-display/ProjectImageDisplay";
-import projectData from "../../utils/assets";
+import { projectData as projectImages } from "../../projects-assets/projects-images";
 import exploreProjectsStyles from "./exploreProjectsStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import exploreProjectsUtils from "./exploreProjectsUtils";
-const projectImages = projectData;
 
 exploreProjectsUtils.handleProjectImagesGrid();
 const ExploreProjects = () => {
@@ -17,10 +16,11 @@ const ExploreProjects = () => {
 
   const projectImagesStyle = { ...exploreProjectsStyles.projectImagesStyles };
   const ImagesContainer = { ...exploreProjectsStyles.projectImagesContainer };
-  const matches = useMediaQuery("(max-width:860px)");
-  const matches2 = useMediaQuery("(max-width:720px)");
-  const matches3 = useMediaQuery("(max-width:525px)");
-  const matches4 = useMediaQuery("(max-width:390px)");
+
+  const tablet = useMediaQuery("(max-width:860px)");
+  const betweenTabletAndBigPhones = useMediaQuery("(max-width:720px)");
+  const phones = useMediaQuery("(max-width:525px)");
+  const smallPhones = useMediaQuery("(max-width:390px)");
   const projectImagesLists = {};
   let props = {
     visible: visible,
@@ -29,14 +29,14 @@ const ExploreProjects = () => {
   };
   // All images are wrapped in lists and lists are wrapped a container.
 
-  exploreProjectsUtils.handleResponsiveness(
-    matches,
-    matches2,
-    matches3,
-    matches4,
+  exploreProjectsUtils.handleResponsiveness({
+    tablet,
+    betweenTabletAndBigPhones,
+    phones,
+    smallPhones,
     ImagesContainer,
-    projectImagesLists
-  );
+    projectImagesLists,
+  });
   // These functions handle actions on the images in exploreProjects page.
   const handleHover = (e) => {
     exploreProjectsUtils.handleHoverLogic(

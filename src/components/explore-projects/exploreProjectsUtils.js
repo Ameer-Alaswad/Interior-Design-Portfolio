@@ -22,38 +22,38 @@ const handleHoverLogic = (
   });
   setLayoutVisible(true);
 };
-const handleResponsiveness = (
-  matches,
-  matches2,
-  matches3,
-  matches4,
-  listStyle,
-  projectImagesLists
-) => {
-  if (matches) {
-    listStyle.gridTemplateColumns = "repeat(2, 1fr)";
-    listStyle.height = "3400px";
-    listStyle.width = "650px";
+const handleResponsiveness = ({
+  tablet,
+  betweenTabletAndBigPhones,
+  phones,
+  smallPhones,
+  ImagesContainer,
+  projectImagesLists,
+}) => {
+  if (tablet) {
+    ImagesContainer.gridTemplateColumns = "repeat(2, 1fr)";
+    ImagesContainer.height = "3400px";
+    ImagesContainer.width = "650px";
   }
-  if (matches2) {
-    listStyle.width = "450px";
-    listStyle.gridTemplateColumns = "repeat(1, 1fr)";
+  if (betweenTabletAndBigPhones) {
+    ImagesContainer.width = "450px";
+    ImagesContainer.gridTemplateColumns = "repeat(1, 1fr)";
     projectImagesLists.gridColumnEnd = "auto";
-    listStyle.height = "4300px";
+    ImagesContainer.height = "4300px";
   }
-  if (matches3) {
-    listStyle.width = "320px";
-    listStyle.height = "3400px";
+  if (phones) {
+    ImagesContainer.width = "320px";
+    ImagesContainer.height = "3400px";
 
     projectImagesLists.height = "210px";
     projectImagesLists.gridColumnEnd = "auto";
-    listStyle.height = "4400px";
+    ImagesContainer.height = "4400px";
   }
-  if (matches4) {
+  if (smallPhones) {
     projectImagesLists.height = "150px";
-    listStyle.height = "3200px";
+    ImagesContainer.height = "3200px";
 
-    listStyle.width = "210px";
+    ImagesContainer.width = "210px";
   }
 };
 const handleImageDisplayPopupResponsiveness = (
