@@ -7,8 +7,8 @@ import exploreProjectsUtils from "../exploreProjectsUtils";
 import projectImageStyles from "./projectImageStyles";
 
 export default function ProjectImageDisplay({ visible, setVisible, image }) {
-  const matches = useMediaQuery("(max-width:860px)");
-  const matches2 = useMediaQuery("(max-width:450px)");
+  const tablets = useMediaQuery("(max-width:860px)");
+  const phones = useMediaQuery("(max-width:450px)");
   const projectImageContainerStyle = { ...projectImageStyles.style };
   const projectImageStyle = { ...projectImageStyles.imageStyle };
   const buttonsContainerStyles = {
@@ -20,15 +20,15 @@ export default function ProjectImageDisplay({ visible, setVisible, image }) {
   const checkProjectButtonStyles = {
     ...projectImageStyles.checkProjectButtonStyle,
   };
-  exploreProjectsUtils.handleImageDisplayPopupResponsiveness(
+  exploreProjectsUtils.handleImageDisplayPopupResponsiveness({
     checkProjectButtonStyles,
     image,
     projectImageContainerStyle,
     projectImageStyle,
     projectCloseButtonStyles,
-    matches2,
-    matches
-  );
+    tablets,
+    phones,
+  });
 
   const [open, setOpen] = React.useState(visible);
 

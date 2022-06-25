@@ -44,7 +44,6 @@ const handleResponsiveness = ({
   if (phones) {
     ImagesContainer.width = "320px";
     ImagesContainer.height = "3400px";
-
     projectImagesLists.height = "210px";
     projectImagesLists.gridColumnEnd = "auto";
     ImagesContainer.height = "4400px";
@@ -56,47 +55,47 @@ const handleResponsiveness = ({
     ImagesContainer.width = "210px";
   }
 };
-const handleImageDisplayPopupResponsiveness = (
+const handleImageDisplayPopupResponsiveness = ({
   checkProjectButtonStyles,
   image,
-  imageContainerStyle,
-  imageStyles,
-  closeProjectButtonStyles,
-  matches2,
-  matches
-) => {
+  projectImageContainerStyle,
+  projectImageStyle,
+  projectCloseButtonStyles,
+  tablets,
+  phones,
+}) => {
   if (image.src.includes("Plenary/6.png")) {
-    imageContainerStyle.display = "flex";
-    imageContainerStyle.flexDirection = "column";
-    imageContainerStyle.alignItems = "center";
-    imageStyles.objectFit = "cover";
-    imageStyles.width = "360px";
-    imageStyles.height = "800px";
-    imageContainerStyle.width = imageStyles.width;
-    imageContainerStyle.height = imageStyles.height;
-    closeProjectButtonStyles.marginTop = "3px";
+    projectImageContainerStyle.display = "flex";
+    projectImageContainerStyle.flexDirection = "column";
+    projectImageContainerStyle.alignItems = "center";
+    projectImageStyle.objectFit = "cover";
+    projectImageStyle.width = "360px";
+    projectImageStyle.height = "800px";
+    projectImageContainerStyle.width = projectImageStyle.width;
+    projectImageContainerStyle.height = projectImageStyle.height;
+    projectCloseButtonStyles.marginTop = "3px";
   }
 
-  if (matches2 && image.src.includes("Plenary/6.png")) {
+  if (phones && image.src.includes("Plenary/6.png")) {
     checkProjectButtonStyles.fontSize = "11px";
 
-    imageStyles.width = "250px";
-    imageStyles.height = "500px";
-    imageContainerStyle.width = imageStyles.width;
-    imageContainerStyle.height = imageStyles.height;
+    projectImageStyle.width = "250px";
+    projectImageStyle.height = "500px";
+    projectImageContainerStyle.width = projectImageStyle.width;
+    projectImageContainerStyle.height = projectImageStyle.height;
   }
-  if (matches && !image.src.includes("Plenary/6.png")) {
-    imageStyles.width = "450px";
-    imageContainerStyle.width = imageStyles.width;
-    imageStyles.height = "280px";
-    imageContainerStyle.height = imageStyles.height;
+  if (tablets && !image.src.includes("Plenary/6.png")) {
+    projectImageStyle.width = "450px";
+    projectImageContainerStyle.width = projectImageStyle.width;
+    projectImageStyle.height = "280px";
+    projectImageContainerStyle.height = projectImageStyle.height;
   }
-  if (matches2 && !image.src.includes("Plenary/6.png")) {
+  if (phones && !image.src.includes("Plenary/6.png")) {
     checkProjectButtonStyles.fontSize = "11px";
-    imageStyles.width = "280px";
-    imageContainerStyle.width = imageStyles.width;
-    imageStyles.height = "150px";
-    imageContainerStyle.height = imageStyles.height;
+    projectImageStyle.width = "280px";
+    projectImageContainerStyle.width = projectImageStyle.width;
+    projectImageStyle.height = "150px";
+    projectImageContainerStyle.height = projectImageStyle.height;
   }
 };
 
