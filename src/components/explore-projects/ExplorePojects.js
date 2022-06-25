@@ -28,13 +28,13 @@ const ExploreProjects = () => {
   const [image, setImage] = React.useState();
   const [layoutVisible, setLayoutVisible] = React.useState(false);
 
-  const projectImagesStyle = { ...projectImagesStyles };
-  const ImagesContainer = { ...projectImagesContainer };
-
   const cashedProjectImages = React.useMemo(() => {
     return projectImages;
   }, []);
-  console.log(cashedProjectImages);
+
+  const projectImagesStyle = { ...projectImagesStyles };
+  const ImagesContainer = { ...projectImagesContainer };
+
   const tablet = useMediaQuery("(max-width:860px)");
   const betweenTabletAndBigPhones = useMediaQuery("(max-width:720px)");
   const phones = useMediaQuery("(max-width:525px)");
