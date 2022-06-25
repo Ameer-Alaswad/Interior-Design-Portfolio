@@ -11,7 +11,6 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Navbar />
-
         <Routes>
           <Route
             exact

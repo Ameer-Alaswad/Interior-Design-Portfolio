@@ -1,14 +1,14 @@
-const setStyesOnProjectImage = (styles, element, e) => {
+const setStyesOnProjectImage = (styles, element) => {
   Object.assign(element.style, styles);
 };
-const handleHoverLogic = (
+const handleHoverLogic = ({
   e,
   onHoverClass,
   noneHoveredProjectImagesStyle,
-  setLayoutVisible
-) => {
-  const imagesList = e.target.parentNode.parentNode.children;
-  [...imagesList].map((imageList) => {
+  setLayoutVisible,
+}) => {
+  const imagesLists = e.target.parentNode.parentNode.children;
+  [...imagesLists].map((imageList) => {
     const image = imageList.children[0];
     let hoveredImage = e.target;
     imageList.style.zIndex = "3";
@@ -18,7 +18,7 @@ const handleHoverLogic = (
       e.target.style.opacity = "1";
       return setStyesOnProjectImage(onHoverClass, hoveredImage, imageList);
     }
-    setStyesOnProjectImage(noneHoveredProjectImagesStyle, image);
+    return setStyesOnProjectImage(noneHoveredProjectImagesStyle, image);
   });
   setLayoutVisible(true);
 };

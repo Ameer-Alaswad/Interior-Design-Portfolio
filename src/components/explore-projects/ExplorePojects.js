@@ -7,6 +7,20 @@ import exploreProjectsStyles from "./exploreProjectsStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import exploreProjectsUtils from "./exploreProjectsUtils";
 
+const {
+  handleResponsiveness,
+  handleHoverLogic,
+  setStyesOnProjectImage,
+  handleProjectImagesGrid,
+} = exploreProjectsUtils;
+const {
+  projectImagesLayout,
+  projectImagesContainer,
+  noneHoveredProjectImagesStyle,
+  onMouseLeaveStyle,
+  onHoverClass,
+  projectImagesStyles,
+} = exploreProjectsStyles;
 exploreProjectsUtils.handleProjectImagesGrid();
 const ExploreProjects = () => {
   // handles the visibility of the popup
@@ -14,9 +28,13 @@ const ExploreProjects = () => {
   const [image, setImage] = React.useState();
   const [layoutVisible, setLayoutVisible] = React.useState(false);
 
-  const projectImagesStyle = { ...exploreProjectsStyles.projectImagesStyles };
-  const ImagesContainer = { ...exploreProjectsStyles.projectImagesContainer };
+  const projectImagesStyle = { ...projectImagesStyles };
+  const ImagesContainer = { ...projectImagesContainer };
 
+  const cashedProjectImages = React.useMemo(() => {
+    return projectImages;
+  }, []);
+  console.log(cashedProjectImages);
   const tablet = useMediaQuery("(max-width:860px)");
   const betweenTabletAndBigPhones = useMediaQuery("(max-width:720px)");
   const phones = useMediaQuery("(max-width:525px)");
@@ -29,7 +47,7 @@ const ExploreProjects = () => {
   };
   // All images are wrapped in lists and lists are wrapped a container.
 
-  exploreProjectsUtils.handleResponsiveness({
+  handleResponsiveness({
     tablet,
     betweenTabletAndBigPhones,
     phones,
@@ -39,13 +57,12 @@ const ExploreProjects = () => {
   });
   // These functions handle actions on the images in exploreProjects page.
   const handleHover = (e) => {
-    exploreProjectsUtils.handleHoverLogic(
+    handleHoverLogic({
       e,
-      exploreProjectsStyles.onHoverClass,
-      exploreProjectsStyles.noneHoveredProjectImagesStyle,
+      onHoverClass,
+      noneHoveredProjectImagesStyle,
       setLayoutVisible,
-      projectImagesLists
-    );
+    });
   };
   const handleMouseLeave = (e) => {
     const imagesList = e.target.parentNode.parentNode.children;
@@ -53,16 +70,12 @@ const ExploreProjects = () => {
       const image = imageList.children[0];
       const hoveredImage = e.target.parentNode;
       image.style.opacity = "1";
-      exploreProjectsUtils.setStyesOnProjectImage(
-        exploreProjectsStyles.onMouseLeaveStyle,
-        hoveredImage,
-        e
-      );
+      return setStyesOnProjectImage(onMouseLeaveStyle, hoveredImage);
     });
     setLayoutVisible(false);
   };
   // When an image gets clicked it gets displayed in a div by this handler.
-  const handleClick = (e) => {
+  const handleProjectImageClick = (e) => {
     const image = e.target;
     setVisible(true);
     setImage(image);
@@ -76,7 +89,7 @@ const ExploreProjects = () => {
         rowHeight={165}
         style={ImagesContainer}
       >
-        {projectImages.map((item, index) => (
+        {cashedProjectImages.map((item, index) => (
           <ImageListItem
             key={item.img}
             cols={item.cols || 1}
@@ -86,23 +99,16 @@ const ExploreProjects = () => {
             <img
               onMouseEnter={handleHover}
               onMouseLeave={handleMouseLeave}
-              onClick={handleClick}
+              onClick={handleProjectImageClick}
               key={index}
               style={projectImagesStyle}
-              {...exploreProjectsUtils.handleProjectImagesGrid(
-                item.img,
-                121,
-                item.rows,
-                item.cols
-              )}
+              {...handleProjectImagesGrid(item.img, 121, item.rows, item.cols)}
               alt={item.title}
             />
           </ImageListItem>
         ))}
       </ImageList>
-      {layoutVisible && (
-        <div style={exploreProjectsStyles.projectImagesLayout}></div>
-      )}
+      {layoutVisible && <div style={projectImagesLayout}></div>}
       {visible && <ProjectImageDisplay {...props} />}
     </div>
   );
