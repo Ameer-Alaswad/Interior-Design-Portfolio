@@ -1,4 +1,5 @@
 import { React, useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -65,6 +66,10 @@ const theme = createTheme({
       top: "120px",
       zIndex: "100",
     },
+    link: {
+      color: WHITE_SOLID,
+      textDecoration: "none",
+    },
   },
 });
 
@@ -105,13 +110,21 @@ export default function Navbar() {
             </Typography>
             <Hidden xsDown>
               <Typography style={{ marginRight: "10px" }}>
-                <Button color="inherit">{home}</Button>
+                <Link style={theme.custom.link} to="/">
+                  <Button color="inherit">{home}</Button>
+                </Link>
+
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   <BasicMenu className={classes.navbarButtonsMargin} />
                 </Button>
-                <Button className={classes.navbarButtonsMargin} color="inherit">
-                  {explore}
-                </Button>
+                <Link style={theme.custom.link} to="/explore">
+                  <Button
+                    className={classes.navbarButtonsMargin}
+                    color="inherit"
+                  >
+                    {explore}
+                  </Button>
+                </Link>
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   {contact}
                 </Button>
@@ -137,14 +150,18 @@ export default function Navbar() {
                 </IconButton>
               </div>
               <Divider />
+              <Link style={theme.custom.link} to="/">
+                <Button color="inherit">{home}</Button>
+              </Link>
 
-              <Button color="inherit">{home}</Button>
               <Button className={classes.navbarButtonsMargin} color="inherit">
                 <BasicMenu />
               </Button>
-              <Button className={classes.navbarButtonsMargin} color="inherit">
-                {explore}
-              </Button>
+              <Link style={theme.custom.link} to="/explore">
+                <Button className={classes.navbarButtonsMargin} color="inherit">
+                  {explore}
+                </Button>
+              </Link>
               <Button className={classes.navbarButtonsMargin} color="inherit">
                 {contact}
               </Button>
