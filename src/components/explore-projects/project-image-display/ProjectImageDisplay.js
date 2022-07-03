@@ -7,8 +7,8 @@ import exploreProjectsUtils from "../exploreProjectsUtils";
 import projectImageStyles from "./projectImageStyles";
 
 export default function ProjectImageDisplay({ visible, setVisible, image }) {
-  const tablets = useMediaQuery("(max-width:860px)");
-  const phones = useMediaQuery("(max-width:450px)");
+  const tabletSize = useMediaQuery("(max-width:860px)");
+  const mobileSize = useMediaQuery("(max-width:450px)");
   const projectImageContainerStyle = { ...projectImageStyles.style };
   const projectImageStyle = { ...projectImageStyles.imageStyle };
   const buttonsContainerStyles = {
@@ -26,8 +26,8 @@ export default function ProjectImageDisplay({ visible, setVisible, image }) {
     projectImageContainerStyle,
     projectImageStyle,
     projectCloseButtonStyles,
-    tablets,
-    phones,
+    tabletSize,
+    mobileSize,
   });
 
   const [open, setOpen] = React.useState(visible);

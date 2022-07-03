@@ -23,32 +23,32 @@ const handleHoverLogic = ({
   setLayoutVisible(true);
 };
 const handleResponsiveness = ({
-  tablet,
-  betweenTabletAndBigPhones,
-  phones,
-  smallPhones,
+  tabletSize,
+  betweenTabletSizeAndBigMobileSize,
+  mobileSize,
+  smallMobileSize,
   ImagesContainer,
   projectImagesLists,
 }) => {
-  if (tablet) {
+  if (tabletSize) {
     ImagesContainer.gridTemplateColumns = "repeat(2, 1fr)";
     ImagesContainer.height = "3400px";
     ImagesContainer.width = "650px";
   }
-  if (betweenTabletAndBigPhones) {
+  if (betweenTabletSizeAndBigMobileSize) {
     ImagesContainer.width = "450px";
     ImagesContainer.gridTemplateColumns = "repeat(1, 1fr)";
     projectImagesLists.gridColumnEnd = "auto";
     ImagesContainer.height = "4300px";
   }
-  if (phones) {
+  if (mobileSize) {
     ImagesContainer.width = "320px";
     ImagesContainer.height = "3400px";
     projectImagesLists.height = "210px";
     projectImagesLists.gridColumnEnd = "auto";
     ImagesContainer.height = "4400px";
   }
-  if (smallPhones) {
+  if (smallMobileSize) {
     projectImagesLists.height = "150px";
     ImagesContainer.height = "3200px";
 
@@ -61,8 +61,8 @@ const handleImageDisplayPopupResponsiveness = ({
   projectImageContainerStyle,
   projectImageStyle,
   projectCloseButtonStyles,
-  tablets,
-  phones,
+  tabletSize,
+  mobileSize,
 }) => {
   if (image.src.includes("Plenary/6.png")) {
     projectImageContainerStyle.display = "flex";
@@ -76,7 +76,7 @@ const handleImageDisplayPopupResponsiveness = ({
     projectCloseButtonStyles.marginTop = "3px";
   }
 
-  if (phones && image.src.includes("Plenary/6.png")) {
+  if (mobileSize && image.src.includes("Plenary/6.png")) {
     checkProjectButtonStyles.fontSize = "11px";
 
     projectImageStyle.width = "250px";
@@ -84,13 +84,13 @@ const handleImageDisplayPopupResponsiveness = ({
     projectImageContainerStyle.width = projectImageStyle.width;
     projectImageContainerStyle.height = projectImageStyle.height;
   }
-  if (tablets && !image.src.includes("Plenary/6.png")) {
+  if (tabletSize && !image.src.includes("Plenary/6.png")) {
     projectImageStyle.width = "450px";
     projectImageContainerStyle.width = projectImageStyle.width;
     projectImageStyle.height = "280px";
     projectImageContainerStyle.height = projectImageStyle.height;
   }
-  if (phones && !image.src.includes("Plenary/6.png")) {
+  if (mobileSize && !image.src.includes("Plenary/6.png")) {
     checkProjectButtonStyles.fontSize = "11px";
     projectImageStyle.width = "280px";
     projectImageContainerStyle.width = projectImageStyle.width;

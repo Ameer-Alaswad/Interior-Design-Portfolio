@@ -21,7 +21,7 @@ const {
   onHoverClass,
   projectImagesStyles,
 } = exploreProjectsStyles;
-exploreProjectsUtils.handleProjectImagesGrid();
+handleProjectImagesGrid();
 const ExploreProjects = () => {
   // handles the visibility of the popup
   const [visible, setVisible] = React.useState(false);
@@ -35,10 +35,10 @@ const ExploreProjects = () => {
   const projectImagesStyle = { ...projectImagesStyles };
   const ImagesContainer = { ...projectImagesContainer };
 
-  const tablet = useMediaQuery("(max-width:860px)");
-  const betweenTabletAndBigPhones = useMediaQuery("(max-width:720px)");
-  const phones = useMediaQuery("(max-width:525px)");
-  const smallPhones = useMediaQuery("(max-width:390px)");
+  const tabletSize = useMediaQuery("(max-width:860px)");
+  const betweenTabletSizeAndBigMobileSize = useMediaQuery("(max-width:720px)");
+  const mobileSize = useMediaQuery("(max-width:525px)");
+  const smallMobileSize = useMediaQuery("(max-width:390px)");
   const projectImagesLists = {};
   let props = {
     visible: visible,
@@ -48,10 +48,10 @@ const ExploreProjects = () => {
   // All images are wrapped in lists and lists are wrapped a container.
 
   handleResponsiveness({
-    tablet,
-    betweenTabletAndBigPhones,
-    phones,
-    smallPhones,
+    tabletSize,
+    betweenTabletSizeAndBigMobileSize,
+    mobileSize,
+    smallMobileSize,
     ImagesContainer,
     projectImagesLists,
   });
