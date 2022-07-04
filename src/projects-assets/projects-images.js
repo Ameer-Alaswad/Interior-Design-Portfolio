@@ -1,12 +1,12 @@
 export let projectSHomePictures = [
   {
-    img: "carousel/pic1.jpg",
+    img: "carousel/Cube-main.jpg",
   },
   {
-    img: "carousel/pic3.png",
+    img: "carousel/Unpretentious-main.png",
   },
   {
-    img: "carousel/pic4.png",
+    img: "carousel/Plenary-main.png",
   },
 ];
 export const projectData = [
