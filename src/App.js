@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PhotosGallery from "./components/projects-gallary/projectsGallary";
 import Footer from "./components/footer/footer";
 import ExploreProjects from "./components/explore-projects/ExplorePojects";
+import { Projects } from "./components/display-projects/DisplayProjects";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             }
           />
           <Route path="/explore" element={<ExploreProjects />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
         <Footer />
       </div>

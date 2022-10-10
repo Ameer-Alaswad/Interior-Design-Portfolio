@@ -1,89 +1,112 @@
 export let projectSHomePictures = [
   {
-    img: "carousel/pic1.jpg",
+    name: "Cube",
+    img: "carousel/Cube-main.jpg",
   },
   {
-    img: "carousel/pic3.png",
+    name: "Unpretentious",
+    img: "carousel/Unpretentious-main.png",
   },
   {
-    img: "carousel/pic4.png",
+    name: "Plenary",
+    img: "carousel/Plenary-main.png",
   },
 ];
 export const projectData = [
   {
-    img: "/Plenary/5.Front.png",
+    name: "Plenary",
+    img: "/Plenary/5.Front.jpg",
     rows: 2,
     cols: 2,
   },
   {
-    img: "/Plenary/2.png",
+    name: "Plenary",
+    img: "/Plenary/2.jpg",
   },
   {
-    img: "/Plenary/3.png",
+    name: "Plenary",
+    img: "/Plenary/3.jpg",
   },
   {
-    img: "/Plenary/1.png",
+    name: "Plenary",
+    img: "/Plenary/1.jpg",
     cols: 2,
   },
   {
-    img: "/Cube/1.png",
+    name: "Cube",
+    img: "/Cube/1.jpg",
     cols: 2,
   },
   {
-    img: "/Plenary/4.png",
+    name: "Plenary",
+    img: "/Plenary/4.jpg",
     rows: 2,
     cols: 2,
   },
   {
-    img: "/Plenary/6.png",
+    name: "Plenary",
+    img: "/Plenary/6.jpg",
   },
   {
-    img: "/Cube/2.png",
+    name: "Cube",
+    img: "/Cube/2.jpg",
   },
   {
-    img: "/Cube/3.png",
+    name: "Cube",
+    img: "/Cube/3.jpg",
     title: "Mushrooms",
     rows: 2,
     cols: 2,
   },
   {
-    img: "/Cube/4.png",
+    name: "Cube",
+    img: "/Cube/4.jpg",
   },
   {
-    img: "/Cube/5.png",
+    name: "Cube",
+    img: "/Cube/5.jpg",
   },
   {
-    img: "/Cube/6.png",
+    name: "Cube",
+    img: "/Cube/6.jpg",
     cols: 2,
   },
   {
-    img: "/Cube/7.png",
+    name: "Cube",
+    img: "/Cube/7.jpg",
     rows: 2,
     cols: 2,
   },
   {
-    img: "/Cube/8.png",
+    name: "Cube",
+    img: "/Cube/8.jpg",
   },
   {
-    img: "/Cube/9.png",
+    name: "Cube",
+    img: "/Cube/9.jpg",
   },
   {
-    img: "/Unpretentious/1.png",
+    name: "Unpretentious",
+    img: "/Unpretentious/1.jpg",
     cols: 2,
   },
   {
-    img: "/Unpretentious/4.Front.png",
+    name: "Unpretentious",
+    img: "/Unpretentious/4.Front.jpg",
     cols: 2,
   },
   {
-    img: "/Unpretentious/2.png",
+    name: "Unpretentious",
+    img: "/Unpretentious/2.jpg",
     rows: 2,
     cols: 2,
   },
   {
-    img: "/Unpretentious/3.png",
+    name: "Unpretentious",
+    img: "/Unpretentious/3.jpg",
   },
   {
-    img: "/Unpretentious/5.png",
+    name: "Unpretentious",
+    img: "/Unpretentious/5.jpg",
   },
 ];

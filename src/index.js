@@ -2,10 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { SelectedProjectContextProvider } from "./projects-assets/selectedProjectContext";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <SelectedProjectContextProvider>
+      <App />
+    </SelectedProjectContextProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

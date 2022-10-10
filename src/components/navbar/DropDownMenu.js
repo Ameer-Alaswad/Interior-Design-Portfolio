@@ -1,49 +1,97 @@
-import * as React from "react";
-import Menu from "@mui/material/Menu";
-import Box from "@mui/material/Box";
-import MenuItem from "@mui/material/MenuItem";
-import { CONCRETE } from "../../default-colors/colors";
-import text from "../../projects-assets/projectText.json";
+import React, { useContext } from "react";
+import Button from "@material-ui/core/Button";
+import Menu from "@material-ui/core/Menu";
+import MenuItem from "@material-ui/core/MenuItem";
+import makeStyles from "@material-ui/styles/makeStyles";
+import { useNavigate } from "react-router-dom";
+import { Fade } from "@mui/material";
+import { SelectedProjectContext } from "../../projects-assets/selectedProjectContext";
+import data from "../../projects-assets/projectText.json";
 
-const { projects } = text.headerText;
-const { profile, myAccount, logout } = text.dropDownMenuText;
+const useStyles = makeStyles({
+  popOverRoot: {
+    pointerEvents: "none",
+  },
+});
 
-export default function BasicMenu() {
+function SimpleMenu() {
+  const projectsData = useContext(SelectedProjectContext);
+  const { selectedProject, setSelectedProject } = projectsData;
+  const filterSelectedProject = data.projectsData.map((project) => {
+    return project.projectName;
+  });
+  const navigate = useNavigate();
+  let currentlyHovering = false;
+  const styles = useStyles();
+
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
+
+  function handleMouseOver(event) {
+    if (anchorEl !== event.currentTarget) {
+      setAnchorEl(event.currentTarget);
+    }
+  }
+
+  function handleHover() {
+    currentlyHovering = true;
+  }
+
+  function handleClose(e) {
     setAnchorEl(null);
-  };
+  }
+  function handleCloseMenuItem(e) {
+    setSelectedProject(e.target.innerText);
+    setAnchorEl(null);
+    navigate("/projects");
+  }
+
+  function handleCloseHover() {
+    currentlyHovering = false;
+    setTimeout(() => {
+      if (!currentlyHovering) {
+        handleClose();
+      }
+    }, 50);
+  }
 
   return (
     <div>
-      <Box
-        style={{
-          color: CONCRETE,
-        }}
-        aria-controls={open ? "basic-menu" : undefined}
-        aria-haspopup="true"
-        aria-expanded={open ? "true" : undefined}
-        onClick={handleClick}
+      <Button
+        aria-owns={anchorEl ? "simple-menu" : undefined}
+        aria-haspopup="false"
+        onClick={() => navigate("/projects")}
+        onMouseOver={handleMouseOver}
+        onMouseLeave={handleCloseHover}
+        style={{ color: "white" }}
       >
-        {projects}
-      </Box>
+        PROJECTS
+      </Button>
       <Menu
-        id="basic-menu"
+        id="simple-menu"
         anchorEl={anchorEl}
-        open={open}
+        open={Boolean(anchorEl)}
         onClose={handleClose}
         MenuListProps={{
-          "aria-labelledby": "basic-button",
+          onMouseEnter: handleHover,
+          onMouseLeave: handleCloseHover,
+          style: { pointerEvents: "auto" },
         }}
+        getContentAnchorEl={null}
+        anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+        PopoverClasses={{
+          root: styles.popOverRoot,
+        }}
+        TransitionComponent={Fade}
       >
-        <MenuItem onClick={handleClose}>{profile}</MenuItem>
-        <MenuItem onClick={handleClose}>{myAccount}</MenuItem>
-        <MenuItem onClick={handleClose}>{logout}</MenuItem>
+        {filterSelectedProject &&
+          filterSelectedProject.map((project) => (
+            <MenuItem key={project} onClick={handleCloseMenuItem}>
+              {project}
+            </MenuItem>
+          ))}
       </Menu>
     </div>
   );
 }
+
+export default SimpleMenu;
