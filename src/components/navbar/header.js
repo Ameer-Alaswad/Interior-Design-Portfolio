@@ -164,7 +164,7 @@ export default function Navbar() {
                 {contract}
               </Button>
             </SwipeableDrawer>
-            <Hidden smUp>
+            {/* <Hidden smUp>
               {slideLeftIconVisiable && (
                 <img
                   className={clsx(classes.animatedItem)}
@@ -173,7 +173,7 @@ export default function Navbar() {
                   alt="slide-left-sign"
                 />
               )}
-            </Hidden>
+            </Hidden> */}
           </Toolbar>
         </AppBar>
       </ThemeProvider>
