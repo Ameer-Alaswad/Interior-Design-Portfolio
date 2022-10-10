@@ -108,29 +108,26 @@ export default function Navbar() {
                 alt="logo-on-the-navbar"
               />
             </Typography>
-            <Hidden xsDown>
-              <Typography style={{ marginRight: "10px" }}>
-                <Link style={theme.custom.link} to="/">
-                  <Button color="inherit">{home}</Button>
-                </Link>
+            {/* <Hidden xsDown> */}
+            <Typography style={{ marginRight: "10px" }}>
+              <Link style={theme.custom.link} to="/">
+                <Button color="inherit">{home}</Button>
+              </Link>
 
+              <Button className={classes.navbarButtonsMargin} color="inherit">
+                <BasicMenu className={classes.navbarButtonsMargin} />
+              </Button>
+              <Link style={theme.custom.link} to="/explore">
                 <Button className={classes.navbarButtonsMargin} color="inherit">
-                  <BasicMenu className={classes.navbarButtonsMargin} />
+                  {explore}
                 </Button>
-                <Link style={theme.custom.link} to="/explore">
-                  <Button
-                    className={classes.navbarButtonsMargin}
-                    color="inherit"
-                  >
-                    {explore}
-                  </Button>
-                </Link>
+              </Link>
 
-                <Button className={classes.navbarButtonsMargin} color="inherit">
-                  {contract}
-                </Button>
-              </Typography>
-            </Hidden>
+              <Button className={classes.navbarButtonsMargin} color="inherit">
+                {contract}
+              </Button>
+            </Typography>
+            {/* </Hidden> */}
             {/* <Hidden smUp>
               <IconButton onClick={() => setOpen(true)}>
                 <MenuIcon style={theme.custom.menuIconStyling} />
