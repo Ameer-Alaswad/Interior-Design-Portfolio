@@ -16,7 +16,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Divider from "@material-ui/core/Divider";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import clsx from "clsx";
+// import clsx from "clsx";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import text from "../../projects-assets/projectText.json";
@@ -76,7 +76,8 @@ const theme = createTheme({
 export default function Navbar() {
   const theTheme = useTheme();
   const [open, setOpen] = useState(false);
-  const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
+  const [setSlideLeftIconVisiable] = useState(true);
+  // const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
   const screenWidthIsLessThan600px = useMediaQuery(
     theTheme.breakpoints.down("sm")
   );
