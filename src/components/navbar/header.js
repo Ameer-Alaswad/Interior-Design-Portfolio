@@ -17,8 +17,8 @@ import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import Divider from "@material-ui/core/Divider";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 // import clsx from "clsx";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+// import useMediaQuery from "@mui/material/useMediaQuery";
+// import { useTheme } from "@mui/material/styles";
 import text from "../../projects-assets/projectText.json";
 const { home, explore, contract } = text.headerText;
 
@@ -74,26 +74,26 @@ const theme = createTheme({
 });
 
 export default function Navbar() {
-  const theTheme = useTheme();
+  // const theTheme = useTheme();
   const [open, setOpen] = useState(false);
-  const [setSlideLeftIconVisiable] = useState(true);
+  // const [setSlideLeftIconVisiable] = useState(true);
   // const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
-  const screenWidthIsLessThan600px = useMediaQuery(
-    theTheme.breakpoints.down("sm")
-  );
-  const screenWidthIsGreaterThan600px = useMediaQuery(
-    theTheme.breakpoints.up("sm")
-  );
-  function closeAndOpenSlideLeftIcon() {
-    if (screenWidthIsGreaterThan600px) setSlideLeftIconVisiable(true);
-    else if (screenWidthIsLessThan600px) {
-      setTimeout(function () {
-        return setSlideLeftIconVisiable(false);
-      }, 6000);
-    }
-  }
+  // const screenWidthIsLessThan600px = useMediaQuery(
+  //   theTheme.breakpoints.down("sm")
+  // );
+  // const screenWidthIsGreaterThan600px = useMediaQuery(
+  //   theTheme.breakpoints.up("sm")
+  // );
+  // function closeAndOpenSlideLeftIcon() {
+  //   if (screenWidthIsGreaterThan600px) setSlideLeftIconVisiable(true);
+  //   else if (screenWidthIsLessThan600px) {
+  //     setTimeout(function () {
+  //       return setSlideLeftIconVisiable(false);
+  //     }, 6000);
+  //   }
+  // }
   useEffect(() => {
-    closeAndOpenSlideLeftIcon();
+    // closeAndOpenSlideLeftIcon();
   });
 
   const classes = useStyles();
