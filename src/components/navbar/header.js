@@ -11,14 +11,14 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ZEUS, WHITE_SOLID } from "../../default-colors/colors";
 import { makeStyles } from "@mui/styles";
 import Hidden from "@material-ui/core/Hidden";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import Divider from "@material-ui/core/Divider";
-import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import clsx from "clsx";
-import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+// import IconButton from "@material-ui/core/IconButton";
+// import MenuIcon from "@material-ui/icons/Menu";
+// import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+// import Divider from "@material-ui/core/Divider";
+// import ChevronRightIcon from "@mui/icons-material/ChevronRight";
+// import clsx from "clsx";
+// import useMediaQuery from "@mui/material/useMediaQuery";
+// import { useTheme } from "@mui/material/styles";
 import text from "../../projects-assets/projectText.json";
 const { home, explore, contract } = text.headerText;
 
@@ -74,25 +74,25 @@ const theme = createTheme({
 });
 
 export default function Navbar() {
-  const theTheme = useTheme();
-  const [open, setOpen] = useState(false);
-  const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
-  const screenWidthIsLessThan600px = useMediaQuery(
-    theTheme.breakpoints.down("sm")
-  );
-  const screenWidthIsGreaterThan600px = useMediaQuery(
-    theTheme.breakpoints.up("sm")
-  );
-  function closeAndOpenSlideLeftIcon() {
-    if (screenWidthIsGreaterThan600px) setSlideLeftIconVisiable(true);
-    else if (screenWidthIsLessThan600px) {
-      setTimeout(function () {
-        return setSlideLeftIconVisiable(false);
-      }, 6000);
-    }
-  }
+  // const theTheme = useTheme();
+  // const [open, setOpen] = useState(false);
+  // const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
+  // const screenWidthIsLessThan600px = useMediaQuery(
+  //   theTheme.breakpoints.down("sm")
+  // );
+  // const screenWidthIsGreaterThan600px = useMediaQuery(
+  //   theTheme.breakpoints.up("sm")
+  // );
+  // function closeAndOpenSlideLeftIcon() {
+  //   if (screenWidthIsGreaterThan600px) setSlideLeftIconVisiable(true);
+  //   else if (screenWidthIsLessThan600px) {
+  //     setTimeout(function () {
+  //       return setSlideLeftIconVisiable(false);
+  //     }, 6000);
+  //   }
+  // }
   useEffect(() => {
-    closeAndOpenSlideLeftIcon();
+    // closeAndOpenSlideLeftIcon();
   });
 
   const classes = useStyles();
@@ -131,12 +131,12 @@ export default function Navbar() {
                 </Button>
               </Typography>
             </Hidden>
-            <Hidden smUp>
+            {/* <Hidden smUp>
               <IconButton onClick={() => setOpen(true)}>
                 <MenuIcon style={theme.custom.menuIconStyling} />
               </IconButton>
-            </Hidden>
-            <SwipeableDrawer
+            </Hidden> */}
+            {/* <SwipeableDrawer
               anchor="right"
               open={open}
               onOpen={() => setOpen(true)}
@@ -173,7 +173,7 @@ export default function Navbar() {
                   alt="slide-left-sign"
                 />
               )}
-            </Hidden>
+            </Hidden> */}
           </Toolbar>
         </AppBar>
       </ThemeProvider>
