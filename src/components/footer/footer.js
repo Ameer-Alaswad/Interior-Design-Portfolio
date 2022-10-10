@@ -128,7 +128,7 @@ export default function Footer() {
       <Box style={{ width: "100%" }} sx={theme.custom.footerContainer.sx}>
         <img
           alt="img-in-footer"
-          src="/carousel/pic1.jpg"
+          src="/icons/pic1.jpg"
           style={theme.custom.imageInFooter}
         />
         <Box style={theme.custom.footerLogoAndParagraphsContainer}>

@@ -1,52 +1,65 @@
-
-    {
-        "landingPageText":{
-           "sectionOneText":{
-            "line1SectionOne":"Destination Eichler creates inviting and functional modern interiors",
-            "line2SectionOne":"SAN FRANCISCO BAY AREA & BEYOND",
-            "buttonTextSectionOne":"VIEW PROJECTS"
-           },
-           "sectionTwoText":{
-            "line1SectionTwo":"LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE",
-            "line2SectionTwo":"_ ONE THATS A REFLECTION OF YOUR UNIQUE",
-            "line3SectionTwo":"AND DAY-TO-DAY NEEDS."
-           },
-           "sectionThreeText":{
-            "line1SectionThree":"GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGN FIRM BASED",
-            "line2SectionThree":"IN GERMANY, BERLIN. WE SERVICE RESIDENTIAL AND COMMERCIAL PROJECTS",
-            "line3SectionThree":"NATIONWIDE- WITH CREATIVE AND CUSTOM SOLUTIONS."
-           },
-           "weLoveToHearAboutYourProjectButtonText":"WE'D LOVE TO HEAR ABOUT YOUR PROJECT"
+{
+  "landingPageText": {
+    "sectionOneText": {
+      "line1SectionOne": "Destination Eichler creates inviting and functional modern interiors",
+      "line2SectionOne": "SAN FRANCISCO BAY AREA & BEYOND",
+      "buttonTextSectionOne": "VIEW PROJECTS"
     },
-       "footerText":{
-        "underLogoText":{
-         "name":"GHAITH KONBAZ",
-         "jobTitle":"INTERIOR DESIGN"
-      },
-       "contactingEmail":{
-       "forMoreInformation":"FOR MORE INFORMATION, EMAIL",
-       "emailLink":"ghaith.konbaz@gmail.com"
-       },
-       "socialLinks":{
-        "instagram":"INSTAGRAM",
-        "linkedIn":"LINKEDIN",
-        "facebook":"FACEBOOK",
-        "fiver":"FIVERR"
-        } 
-
+    "sectionTwoText": {
+      "line1SectionTwo": "LET'S WORK TOGETHER TO DESIGHN A JOYFUL..COLLESIVE, INSPIRING SPACE",
+      "line2SectionTwo": "_ ONE THATS A REFLECTION OF YOUR UNIQUE",
+      "line3SectionTwo": "AND DAY-TO-DAY NEEDS."
     },
-       "headerText":{
-          "explore":"EXPLORE",
-          "home":"HOME",
-          "projects":"PROJECTS",
-          "contract":"CONTRACT",
-          "contact":"CONTACT"
+    "sectionThreeText": {
+      "line1SectionThree": "GHAITH KONBAZ DESIGHN IS A FULL-SERVICE INTERIOR DESIGN FIRM BASED",
+      "line2SectionThree": "IN GERMANY, BERLIN. WE SERVICE RESIDENTIAL AND COMMERCIAL PROJECTS",
+      "line3SectionThree": "NATIONWIDE- WITH CREATIVE AND CUSTOM SOLUTIONS."
     },
-    "dropDownMenuText":{
-        "profile":"Profile",
-        "myAccount":"My account",
-        "logout":"Logout"
+    "weLoveToHearAboutYourProjectButtonText": "WE'D LOVE TO HEAR ABOUT YOUR PROJECT"
+  },
+  "footerText": {
+    "underLogoText": {
+      "name": "GHAITH KONBAZ",
+      "jobTitle": "INTERIOR DESIGN"
+    },
+    "contactingEmail": {
+      "forMoreInformation": "FOR MORE INFORMATION, EMAIL",
+      "emailLink": "ghaith.konbaz@gmail.com"
+    },
+    "socialLinks": {
+      "instagram": "INSTAGRAM",
+      "linkedIn": "LINKEDIN",
+      "facebook": "FACEBOOK",
+      "fiver": "FIVERR"
     }
-
+  },
+  "headerText": {
+    "explore": "EXPLORE",
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "contract": "CONTRACT",
+    "contact": "CONTACT"
+  },
+  "dropDownMenuText": {
+    "profile": "Profile",
+    "myAccount": "My account",
+    "logout": "Logout"
+  },
+  "projectsData": [
+    {
+      "projectName": "Plenary",
+      "projectTitle":"Modern, family-friendly updates to an Eichler home",
+      "projectDescription": "An Eichler in San Rafael’s Terra Linda neighborhood went through full bathroom transformations that included fresh modern updates, while maintaining the classic Eichler feel. Original wood paneling and mirrored cabinet were kept and reconditioned to maintain the original beauty of mid-century modern style."
+    },
+    {
+        "projectName": "Cube",
+        "projectTitle":"San Marino",
+        "projectDescription": "A mid-century modern refresh of a previously renovated East Bay Eichler Home includes infusion of a playful color palette and sustainable design materials."
+    },
+    {
+        "projectName": "Unpretentious",
+        "projectTitle":"Los Altos Eichler",
+        "projectDescription": "A well-loved and cared for Original Eichler home receives a mid-century inspired renovation and vintage furnishings for a young, active family. "
+ }
+  ]
 }
-

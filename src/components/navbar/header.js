@@ -125,9 +125,7 @@ export default function Navbar() {
                     {explore}
                   </Button>
                 </Link>
-                <Button className={classes.navbarButtonsMargin} color="inherit">
-                  {contact}
-                </Button>
+
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   {contract}
                 </Button>
@@ -151,21 +149,18 @@ export default function Navbar() {
               </div>
               <Divider />
               <Link style={theme.custom.link} to="/">
-                <Button color="inherit">{home}</Button>
+                <Button>{home}</Button>
               </Link>
-
-              <Button className={classes.navbarButtonsMargin} color="inherit">
+              <Button className={classes.navbarButtonsMargin}>
                 <BasicMenu />
               </Button>
               <Link style={theme.custom.link} to="/explore">
-                <Button className={classes.navbarButtonsMargin} color="inherit">
+                <Button className={classes.navbarButtonsMargin}>
                   {explore}
                 </Button>
               </Link>
-              <Button className={classes.navbarButtonsMargin} color="inherit">
-                {contact}
-              </Button>
-              <Button className={classes.navbarButtonsMargin} color="inherit">
+
+              <Button className={classes.navbarButtonsMargin}>
                 {contract}
               </Button>
             </SwipeableDrawer>
