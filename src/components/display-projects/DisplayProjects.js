@@ -19,6 +19,7 @@ export const Projects = () => {
   });
   const filterSelectedProjectImages = projectData.filter((project) => {
     if (selectedProject === project.name) return project.img;
+    return null;
   });
   console.log(filterSelectedProjectImages);
   const { projectTitle, projectDescription } = filterSelectedProject[0];

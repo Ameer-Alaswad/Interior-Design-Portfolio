@@ -20,7 +20,7 @@ import clsx from "clsx";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import text from "../../projects-assets/projectText.json";
-const { home, explore, contract, contact } = text.headerText;
+const { home, explore, contract } = text.headerText;
 
 const useStyles = makeStyles(() => ({
   navbarButtonsMargin: {

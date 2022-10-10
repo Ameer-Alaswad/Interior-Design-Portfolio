@@ -16,7 +16,7 @@ const useStyles = makeStyles({
 
 function SimpleMenu() {
   const projectsData = useContext(SelectedProjectContext);
-  const { selectedProject, setSelectedProject } = projectsData;
+  const { setSelectedProject } = projectsData;
   const filterSelectedProject = data.projectsData.map((project) => {
     return project.projectName;
   });

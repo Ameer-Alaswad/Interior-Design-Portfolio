@@ -81,8 +81,6 @@ export const theme = createTheme({
       padding: "13px",
       width: "420px",
       color: "black",
-      letterSpacing: "1.5px",
-      padding: "15px 15px",
       fontWeight: "bald",
     },
   },
