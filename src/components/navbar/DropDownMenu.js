@@ -55,7 +55,7 @@ function SimpleMenu() {
   }
 
   return (
-    <div>
+    <>
       <Button
         aria-owns={anchorEl ? "simple-menu" : undefined}
         aria-haspopup="false"
@@ -90,7 +90,7 @@ function SimpleMenu() {
             </MenuItem>
           ))}
       </Menu>
-    </div>
+    </>
   );
 }
 

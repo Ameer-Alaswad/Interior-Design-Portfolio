@@ -114,9 +114,9 @@ export default function Navbar() {
                 <Button color="inherit">{home}</Button>
               </Link>
 
-              <Button className={classes.navbarButtonsMargin} color="inherit">
-                <BasicMenu className={classes.navbarButtonsMargin} />
-              </Button>
+              {/* <Button className={classes.navbarButtonsMargin} color="inherit"> */}
+              <BasicMenu className={classes.navbarButtonsMargin} />
+              {/* </Button> */}
               <Link style={theme.custom.link} to="/explore">
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   {explore}
