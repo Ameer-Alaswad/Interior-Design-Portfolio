@@ -76,7 +76,6 @@ const theme = createTheme({
 export default function Navbar() {
   const theTheme = useTheme();
   const [open, setOpen] = useState(false);
-  const [setSlideLeftIconVisiable] = useState(true);
   const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
   const screenWidthIsLessThan600px = useMediaQuery(
     theTheme.breakpoints.down("sm")
@@ -93,7 +92,7 @@ export default function Navbar() {
     }
   }
   useEffect(() => {
-    // closeAndOpenSlideLeftIcon();
+    closeAndOpenSlideLeftIcon();
   });
 
   const classes = useStyles();
