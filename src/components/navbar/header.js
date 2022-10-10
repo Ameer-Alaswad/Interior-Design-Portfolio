@@ -10,7 +10,7 @@ import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { ZEUS, WHITE_SOLID } from "../../default-colors/colors";
 import { makeStyles } from "@mui/styles";
-import Hidden from "@material-ui/core/Hidden";
+// import Hidden from "@material-ui/core/Hidden";
 // import IconButton from "@material-ui/core/IconButton";
 // import MenuIcon from "@material-ui/icons/Menu";
 // import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
