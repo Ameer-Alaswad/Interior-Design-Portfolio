@@ -1,12 +1,15 @@
-import * as React from "react";
+import React from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Modal from "@mui/material/Modal";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import exploreProjectsUtils from "../exploreProjectsUtils";
 import projectImageStyles from "./projectImageStyles";
+import { useNavigate } from "react-router-dom";
 
 export default function ProjectImageDisplay({ visible, setVisible, image }) {
+  const navigate = useNavigate();
+
   const tabletSize = useMediaQuery("(max-width:860px)");
   const mobileSize = useMediaQuery("(max-width:450px)");
   const projectImageContainerStyle = { ...projectImageStyles.style };
@@ -60,7 +63,13 @@ export default function ProjectImageDisplay({ visible, setVisible, image }) {
                 src="/icons/close.png"
               />
             </button>
-            <Button style={checkProjectButtonStyles}>View Project</Button>
+
+            <Button
+              onClick={() => navigate("/projects")}
+              style={checkProjectButtonStyles}
+            >
+              View Project
+            </Button>
           </Box>
         </Box>
       </Modal>
