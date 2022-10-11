@@ -10,7 +10,7 @@ export const Projects = () => {
   const { projectsData: info } = data;
   const projectsData = useContext(SelectedProjectContext);
   const { selectedProject, setSelectedProject } = projectsData;
-
+  console.log(selectedProject);
   const filterSelectedProject = info.filter((project) => {
     if (selectedProject === project.projectName) {
       return project;

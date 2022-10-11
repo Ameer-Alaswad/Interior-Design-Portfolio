@@ -6,6 +6,7 @@ import PhotosGallery from "./components/projects-gallary/projectsGallary";
 import Footer from "./components/footer/footer";
 import ExploreProjects from "./components/explore-projects/ExplorePojects";
 import { Projects } from "./components/display-projects/DisplayProjects";
+import ContractForm from "./components/contract-form/ContractForm";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           />
           <Route path="/explore" element={<ExploreProjects />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/contract" element={<ContractForm />} />
         </Routes>
         <Footer />
       </div>

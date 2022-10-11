@@ -20,7 +20,7 @@ import { makeStyles } from "@mui/styles";
 // import useMediaQuery from "@mui/material/useMediaQuery";
 // import { useTheme } from "@mui/material/styles";
 import text from "../../projects-assets/projectText.json";
-const { home, explore, contract } = text.headerText;
+const { home, explore, contact } = text.headerText;
 
 const useStyles = makeStyles(() => ({
   navbarButtonsMargin: {
@@ -114,18 +114,17 @@ export default function Navbar() {
                 <Button color="inherit">{home}</Button>
               </Link>
 
-              {/* <Button className={classes.navbarButtonsMargin} color="inherit"> */}
               <BasicMenu className={classes.navbarButtonsMargin} />
-              {/* </Button> */}
               <Link style={theme.custom.link} to="/explore">
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   {explore}
                 </Button>
               </Link>
-
-              <Button className={classes.navbarButtonsMargin} color="inherit">
-                {contract}
-              </Button>
+              <Link style={theme.custom.link} to="/contract">
+                <Button className={classes.navbarButtonsMargin} color="inherit">
+                  {contact}
+                </Button>
+              </Link>
             </Typography>
             {/* </Hidden> */}
             {/* <Hidden smUp>
