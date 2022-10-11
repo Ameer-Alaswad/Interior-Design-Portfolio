@@ -25,9 +25,9 @@ const ContractForm = () => {
     contractor: "",
     heardAboutUs: "",
   });
-  const [setSent] = React.useState(false);
+  const [sent, setSent] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-
+  console.log(sent);
   const handleChange = (event) => {
     console.log(event.target.name);
     setData({ ...data, [event.target.name]: event.target.value });
