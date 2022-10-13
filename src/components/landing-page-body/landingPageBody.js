@@ -7,6 +7,7 @@ import { ThemeProvider } from "@mui/material/styles";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useStyles, theme } from "./landingPageStyles";
+import { useNavigate } from "react-router-dom";
 
 import text from "../../projects-assets/projectText.json";
 const {
@@ -17,6 +18,7 @@ const {
 } = text.landingPageText;
 
 export default function LandingPageBody() {
+  const navigate = useNavigate();
   const theTheme = useTheme();
   const classes = useStyles();
   const matches = useMediaQuery(theTheme.breakpoints.down("sm"));
@@ -35,6 +37,7 @@ export default function LandingPageBody() {
           {sectionOneText.line2SectionOne}
           <Stack component={"span"} spacing={2} direction="row">
             <Button
+              onClick={() => navigate("/projects")}
               data-test-id="view-projects-button"
               style={theme.custom.viewProjectsButton}
               variant="contained"
@@ -75,6 +78,7 @@ export default function LandingPageBody() {
         <span style={{ height: "200px" }}>
           <Stack component={"span"} spacing={2} direction="row">
             <Button
+              onClick={() => navigate("/contract")}
               data-test-id="contact-us-button"
               style={theme.custom.weLoveToHearAboutYourProjectButton}
               variant="outlined"

@@ -8,7 +8,11 @@ import Button from "@mui/material/Button";
 import BasicMenu from "./DropDownMenu";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
-import { ZEUS, WHITE_SOLID } from "../../default-colors/colors";
+import {
+  ZEUS,
+  WHITE_SOLID,
+  GLISTENING_GREY,
+} from "../../default-colors/colors";
 import { makeStyles } from "@mui/styles";
 // import Hidden from "@material-ui/core/Hidden";
 // import IconButton from "@material-ui/core/IconButton";
@@ -47,7 +51,7 @@ const theme = createTheme({
   custom: {
     header: {
       backgroundColor: ZEUS,
-      position: "static",
+      position: "fixed",
     },
     logoStyling: {
       width: "100px",
@@ -67,7 +71,7 @@ const theme = createTheme({
       zIndex: "100",
     },
     link: {
-      color: WHITE_SOLID,
+      color: GLISTENING_GREY,
       textDecoration: "none",
     },
   },
@@ -114,12 +118,12 @@ export default function Navbar() {
                 <Button color="inherit">{home}</Button>
               </Link>
 
-              <BasicMenu className={classes.navbarButtonsMargin} />
               <Link style={theme.custom.link} to="/explore">
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   {explore}
                 </Button>
               </Link>
+              <BasicMenu className={classes.navbarButtonsMargin} />
               <Link style={theme.custom.link} to="/contract">
                 <Button className={classes.navbarButtonsMargin} color="inherit">
                   {contact}

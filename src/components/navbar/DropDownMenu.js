@@ -62,7 +62,7 @@ function SimpleMenu() {
         onClick={() => navigate("/projects")}
         onMouseOver={handleMouseOver}
         onMouseLeave={handleCloseHover}
-        style={{ color: "white" }}
+        style={{ color: "#b1b4bd" }}
       >
         PROJECTS
       </Button>
