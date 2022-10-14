@@ -95,7 +95,7 @@ const ExploreProjects = () => {
     });
   };
   return (
-    <div>
+    <div style={{ backgroundColor: "#b1b4bd", marginBottom: "-16px" }}>
       <ImageList
         sx={{ width: 500, height: 450 }}
         variant="quilted"

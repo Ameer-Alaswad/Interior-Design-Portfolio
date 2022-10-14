@@ -25,7 +25,6 @@ const noneHoveredProjectImagesStyle = {
 };
 const projectImagesContainer = {
   margin: "0 auto",
-  marginBottom: "210px",
   height: "1700px",
   width: "810px",
   overFlow: "visible",
