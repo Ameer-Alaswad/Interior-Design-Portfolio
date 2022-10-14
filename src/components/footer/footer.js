@@ -60,17 +60,15 @@ const theme = createTheme({
     },
     imageInFooter: {
       height: "150px",
-      width: "99%",
+      width: "100%",
       objectFit: "cover",
-      border: "solid 7px",
       borderColor: WHITE_SOLID,
       borderBottom: "none",
     },
     footerLogoAndParagraphsContainer: {
       height: "650px",
       backgroundColor: FLINT,
-      width: "99%",
-      border: "solid 7px",
+      width: "100%",
       borderColor: WHITE_SOLID,
 
       borderTop: "none",
@@ -98,6 +96,7 @@ const theme = createTheme({
       fontFamily: "'Century Gothic', sans-serif",
       letterSpacing: "5px",
       fontWeight: "bold",
+      color: BLACK_SOLID,
     },
     emailLinkInSectionTwo: {
       color: ZEUS,

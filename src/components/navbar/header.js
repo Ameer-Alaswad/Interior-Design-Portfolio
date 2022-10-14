@@ -54,8 +54,8 @@ const theme = createTheme({
       position: "fixed",
     },
     logoStyling: {
-      width: "100px",
-      height: "90px",
+      width: "75px",
+      height: "66px",
       marginTop: "7px",
     },
     menuIconStyling: {

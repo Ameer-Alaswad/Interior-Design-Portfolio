@@ -70,7 +70,7 @@ const ContractForm = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: "#b1b4bd" }}>
       <img
         style={{
           width: "100%",
@@ -81,7 +81,7 @@ const ContractForm = () => {
         src="/contract-img.png"
         alt="main-img"
       />
-      <div style={{ width: "956px", margin: "0 auto", marginBottom: "50px" }}>
+      <div style={{ width: "956px", margin: "0 auto" }}>
         <h1>Work with Ghaith Konbaz</h1>
         <form
           onSubmit={handleSubmit}
@@ -290,6 +290,7 @@ const ContractForm = () => {
             style={{
               margin: "0 auto",
               marginTop: "20px",
+              marginBottom: "50px",
               backgroundColor: "#261F18",
               borderRadius: "0",
               fontSize: "12px",

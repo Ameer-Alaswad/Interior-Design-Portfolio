@@ -29,7 +29,7 @@ export const Projects = () => {
 
   console.log(info);
   return (
-    <div>
+    <div style={{ backgroundColor: "#b1b4bd" }}>
       {projectSHomePictures.map((project) => {
         if (selectedProject === project.name) {
           return (

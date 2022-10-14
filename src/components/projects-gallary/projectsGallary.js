@@ -9,24 +9,32 @@ const useStyles = makeStyles({
   carouselContainer: {
     width: "100%",
     backgroundColor: CLOUDY,
-    height: "600px",
+    height: "500px",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
+    overflow: "hidden",
   },
 
   imagesInCarousel: {
-    height: "100%",
+    height: "200%",
+    width: "100%",
+
     [theme.breakpoints.down("xl")]: {
-      height: "85%",
-      width: "65%",
+      height: "154%",
+      width: "100%",
+    },
+    [theme.breakpoints.up("xl")]: {
+      height: "300%",
+      width: "100%",
     },
     [theme.breakpoints.down("lg")]: {
-      height: "85%",
-      width: "73%",
+      height: "130%",
+
+      width: "100%",
     },
     [theme.breakpoints.down("md")]: {
-      height: "75%",
+      height: "80%",
       width: "100%",
     },
     [theme.breakpoints.down("sm")]: {
@@ -38,7 +46,7 @@ const useStyles = makeStyles({
 
 export default function PhotosGallery(props) {
   return (
-    <Carousel>
+    <Carousel backgroundColor="green">
       {projectSHomePictures.map((item, i) => (
         <Item key={i} item={item} />
       ))}
