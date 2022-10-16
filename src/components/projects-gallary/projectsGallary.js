@@ -1,68 +1,124 @@
-import React from "react";
-import Carousel from "react-material-ui-carousel";
+import * as React from "react";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import Box from "@mui/material/Box";
+import MobileStepper from "@material-ui/core/MobileStepper";
+import Button from "@mui/material/Button";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import SwipeableViews from "react-swipeable-views";
+import { autoPlay } from "react-swipeable-views-utils";
 import { projectSHomePictures } from "../../projects-assets/projects-images";
-import { makeStyles } from "@mui/styles";
-import { CLOUDY } from "../../default-colors/colors";
-import { createTheme } from "@mui/material/styles";
-const theme = createTheme({});
+import { CONCRETE, WHITE_SOLID, ZEUS } from "../../default-colors/colors";
+
+const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
+
 const useStyles = makeStyles({
-  carouselContainer: {
-    width: "100%",
-    backgroundColor: CLOUDY,
-    height: "500px",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    overflow: "hidden",
+  root: {
+    maxWidth: 400,
+    flexGrow: 1,
   },
-
-  imagesInCarousel: {
-    height: "200%",
-    width: "100%",
-
-    [theme.breakpoints.down("xl")]: {
-      height: "154%",
-      width: "100%",
-    },
-    [theme.breakpoints.up("xl")]: {
-      height: "300%",
-      width: "100%",
-    },
-    [theme.breakpoints.down("lg")]: {
-      height: "130%",
-
-      width: "100%",
-    },
-    [theme.breakpoints.down("md")]: {
-      height: "80%",
-      width: "100%",
-    },
-    [theme.breakpoints.down("sm")]: {
-      height: "50%",
-      width: "100%",
-    },
+  dot: {
+    backgroundColor: WHITE_SOLID,
+  },
+  dotActive: {
+    backgroundColor: CONCRETE,
   },
 });
 
-export default function PhotosGallery(props) {
+function PhotosGallery() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const [activeStep, setActiveStep] = React.useState(0);
+  const maxSteps = projectSHomePictures.length;
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => prevActiveStep - 1);
+  };
+
+  const handleStepChange = (step) => {
+    setActiveStep(step);
+  };
+
   return (
-    <Carousel backgroundColor="green">
-      {projectSHomePictures.map((item, i) => (
-        <Item key={i} item={item} />
-      ))}
-    </Carousel>
+    <Box sx={{ maxWidth: "100%", flexGrow: 1 }}>
+      <AutoPlaySwipeableViews
+        axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+        index={activeStep}
+        onChangeIndex={handleStepChange}
+        enableMouseEvents
+      >
+        {projectSHomePictures.map((step, index) => (
+          <div key={step.name}>
+            {Math.abs(activeStep - index) <= 2 ? (
+              <Box
+                component="img"
+                sx={{
+                  objectFit: "cover",
+                  height: 550,
+                  display: "block",
+                  overflow: "hidden",
+                  width: "100%",
+                }}
+                src={step.img}
+                alt={step.name}
+              />
+            ) : null}
+          </div>
+        ))}
+      </AutoPlaySwipeableViews>
+      <MobileStepper
+        variant="dots"
+        style={{
+          backgroundColor: ZEUS,
+        }}
+        steps={maxSteps}
+        position="static"
+        activeStep={activeStep}
+        classes={{
+          dot: classes.dot,
+          dotActive: classes.dotActive,
+        }}
+        nextButton={
+          <Button
+            style={{
+              color: CONCRETE,
+            }}
+            size="small"
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
+            Next
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowLeft />
+            ) : (
+              <KeyboardArrowRight />
+            )}
+          </Button>
+        }
+        backButton={
+          <Button
+            style={{
+              color: CONCRETE,
+            }}
+            size="small"
+            onClick={handleBack}
+            disabled={activeStep === 0}
+          >
+            {theme.direction === "rtl" ? (
+              <KeyboardArrowRight />
+            ) : (
+              <KeyboardArrowLeft />
+            )}
+            Back
+          </Button>
+        }
+      />
+    </Box>
   );
 }
 
-function Item(props) {
-  const classes = useStyles();
-  return (
-    <div className={classes.carouselContainer}>
-      <img
-        src={props.item.img}
-        alt="imgs-in-carousel"
-        className={classes.imagesInCarousel}
-      />
-    </div>
-  );
-}
+export default PhotosGallery;

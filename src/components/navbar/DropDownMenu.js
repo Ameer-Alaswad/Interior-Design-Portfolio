@@ -7,13 +7,20 @@ import { useNavigate } from "react-router-dom";
 import { Fade } from "@mui/material";
 import { SelectedProjectContext } from "../../projects-assets/selectedProjectContext";
 import data from "../../projects-assets/projectText.json";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 
+const theme = createTheme({});
 const useStyles = makeStyles({
   popOverRoot: {
     pointerEvents: "none",
   },
+  headerTextStyles: {
+    fontSize: "15px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10px",
+    },
+  },
 });
-
 function SimpleMenu() {
   const projectsData = useContext(SelectedProjectContext);
   const { setSelectedProject } = projectsData;
@@ -56,40 +63,42 @@ function SimpleMenu() {
 
   return (
     <>
-      <Button
-        aria-owns={anchorEl ? "simple-menu" : undefined}
-        aria-haspopup="false"
-        onClick={() => navigate("/projects")}
-        onMouseOver={handleMouseOver}
-        onMouseLeave={handleCloseHover}
-        style={{ color: "#b1b4bd" }}
-      >
-        PROJECTS
-      </Button>
-      <Menu
-        id="simple-menu"
-        anchorEl={anchorEl}
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        MenuListProps={{
-          onMouseEnter: handleHover,
-          onMouseLeave: handleCloseHover,
-          style: { pointerEvents: "auto" },
-        }}
-        getContentAnchorEl={null}
-        anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
-        PopoverClasses={{
-          root: styles.popOverRoot,
-        }}
-        TransitionComponent={Fade}
-      >
-        {filterSelectedProject &&
-          filterSelectedProject.map((project) => (
-            <MenuItem key={project} onClick={handleCloseMenuItem}>
-              {project}
-            </MenuItem>
-          ))}
-      </Menu>
+      <ThemeProvider theme={theme}>
+        <Button
+          aria-owns={anchorEl ? "simple-menu" : undefined}
+          aria-haspopup="false"
+          onClick={() => navigate("/projects")}
+          onMouseOver={handleMouseOver}
+          onMouseLeave={handleCloseHover}
+          style={{ color: "#b1b4bd" }}
+        >
+          <p className={styles.headerTextStyles}> PROJECTS</p>
+        </Button>
+        <Menu
+          id="simple-menu"
+          anchorEl={anchorEl}
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          MenuListProps={{
+            onMouseEnter: handleHover,
+            onMouseLeave: handleCloseHover,
+            style: { pointerEvents: "auto" },
+          }}
+          getContentAnchorEl={null}
+          anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+          PopoverClasses={{
+            root: styles.popOverRoot,
+          }}
+          TransitionComponent={Fade}
+        >
+          {filterSelectedProject &&
+            filterSelectedProject.map((project) => (
+              <MenuItem key={project} onClick={handleCloseMenuItem}>
+                {project}
+              </MenuItem>
+            ))}
+        </Menu>
+      </ThemeProvider>
     </>
   );
 }

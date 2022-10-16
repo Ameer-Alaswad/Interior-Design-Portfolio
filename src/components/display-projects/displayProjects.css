@@ -34,6 +34,12 @@
     font-family: 'Century Gothic', sans-serif;
 }
 
+.project-title-responsive {
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Century Gothic', sans-serif;
+}
+
 .images-container {
     display: flex;
     flex-direction: column;
@@ -42,6 +48,11 @@
 
 .project-images {
     width: 700px;
+    margin-bottom: 25px;
+}
+
+.project-images-responsive {
+    width: 85%;
     margin-bottom: 25px;
 }
 

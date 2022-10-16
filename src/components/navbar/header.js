@@ -8,6 +8,7 @@ import Button from "@mui/material/Button";
 import BasicMenu from "./DropDownMenu";
 import { logo } from "../../utils/assets";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+
 import {
   ZEUS,
   WHITE_SOLID,
@@ -27,9 +28,13 @@ import text from "../../projects-assets/projectText.json";
 const { home, explore, contact } = text.headerText;
 
 const useStyles = makeStyles(() => ({
-  navbarButtonsMargin: {
-    marginRight: "10px",
+  headerTextStyles: {
+    fontSize: "15px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "10px",
+    },
   },
+
   animatedItem: {
     animation: `$myEffect 2s 3 ${theme.transitions.easing.easeInOut}`,
   },
@@ -78,6 +83,8 @@ const theme = createTheme({
 });
 
 export default function Navbar() {
+  const classes = useStyles();
+
   // const theTheme = useTheme();
   // const [open, setOpen] = useState(false);
   // const [slideLeftIconVisiable, setSlideLeftIconVisiable] = useState(true);
@@ -99,34 +106,37 @@ export default function Navbar() {
     // closeAndOpenSlideLeftIcon();
   });
 
-  const classes = useStyles();
   return (
     <Box sx={{ flexGrow: 1 }}>
       <ThemeProvider theme={theme}>
         <AppBar style={theme.custom.header}>
           <Toolbar disableGutters>
             <Typography style={{ marginLeft: "15px" }} sx={{ flexGrow: 1 }}>
-              <img
-                style={theme.custom.logoStyling}
-                src={logo}
-                alt="logo-on-the-navbar"
-              />
+              <Link to="/">
+                <img
+                  style={theme.custom.logoStyling}
+                  src={logo}
+                  alt="logo-on-the-navbar"
+                />
+              </Link>
             </Typography>
             {/* <Hidden xsDown> */}
             <Typography style={{ marginRight: "10px" }}>
               <Link style={theme.custom.link} to="/">
-                <Button color="inherit">{home}</Button>
+                <Button color="inherit">
+                  <p className={classes.headerTextStyles}> {home}</p>
+                </Button>
               </Link>
 
               <Link style={theme.custom.link} to="/explore">
-                <Button className={classes.navbarButtonsMargin} color="inherit">
-                  {explore}
+                <Button color="inherit">
+                  <p className={classes.headerTextStyles}> {explore}</p>
                 </Button>
               </Link>
               <BasicMenu className={classes.navbarButtonsMargin} />
               <Link style={theme.custom.link} to="/contract">
-                <Button className={classes.navbarButtonsMargin} color="inherit">
-                  {contact}
+                <Button color="inherit">
+                  <p className={classes.headerTextStyles}>{contact}</p>
                 </Button>
               </Link>
             </Typography>

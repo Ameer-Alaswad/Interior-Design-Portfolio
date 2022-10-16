@@ -6,11 +6,15 @@ import {
 } from "../../projects-assets/projects-images";
 import data from "../../projects-assets/projectText.json";
 import "./displayProjects.css";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 export const Projects = () => {
+  const mobile = useMediaQuery("(max-width:976px)");
+
   const { projectsData: info } = data;
   const projectsData = useContext(SelectedProjectContext);
   const { selectedProject, setSelectedProject } = projectsData;
-  console.log(selectedProject);
+
   const filterSelectedProject = info.filter((project) => {
     if (selectedProject === project.projectName) {
       return project;
@@ -49,17 +53,26 @@ export const Projects = () => {
         return null;
       })}
       <div
-        style={{
-          width: "1020px",
-          minHeight: "600px",
-          margin: "0 auto",
-          display: "flex",
-        }}
+        style={
+          mobile
+            ? {
+                minHeight: "600px",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }
+            : {
+                minHeight: "600px",
+                display: "flex",
+                justifyContent: "center",
+                marginRight: "170px",
+              }
+        }
       >
         <section
           style={{
             width: "191px",
-            height: "500px",
             marginTop: "40px",
           }}
         >
@@ -90,11 +103,19 @@ export const Projects = () => {
           </div>
         </section>
         <section
-          style={{
-            width: "701px",
-          }}
+          style={
+            mobile
+              ? {
+                  width: "80%",
+                }
+              : {
+                  width: "701px",
+                }
+          }
         >
-          <h1 className="project-title">{projectTitle}</h1>
+          <h1 className={mobile ? "project-title-responsive" : "project-title"}>
+            {projectTitle}
+          </h1>
           <div className="project-description">{projectDescription}</div>
           <div className="images-container">
             {filterSelectedProjectImages &&
@@ -102,7 +123,9 @@ export const Projects = () => {
                 return (
                   <img
                     key={image.img}
-                    className="project-images"
+                    className={
+                      mobile ? "project-images-responsive" : "project-images"
+                    }
                     src={image.img}
                     alt="project-imgs"
                   />

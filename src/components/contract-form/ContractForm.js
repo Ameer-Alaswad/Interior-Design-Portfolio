@@ -9,8 +9,18 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Button from "@mui/material/Button";
 import emailjs from "@emailjs/browser";
 import BasicModal from "./EmailSentModal";
+import { makeStyles } from "@material-ui/core/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
+const useStyles = makeStyles({
+  nameLastNameStyles: {
+    // width: "472px",
+    width: "100%",
+  },
+});
 const ContractForm = () => {
+  const classes = useStyles();
+  const mobile = useMediaQuery("(max-width:988px)");
   const [data, setData] = React.useState({
     name: "",
     lastName: "",
@@ -29,7 +39,6 @@ const ContractForm = () => {
   const [open, setOpen] = React.useState(false);
   console.log(sent);
   const handleChange = (event) => {
-    console.log(event.target.name);
     setData({ ...data, [event.target.name]: event.target.value });
   };
   const handleSubmit = (event) => {
@@ -81,15 +90,26 @@ const ContractForm = () => {
         src="/contract-img.png"
         alt="main-img"
       />
-      <div style={{ width: "956px", margin: "0 auto" }}>
+      <div
+        style={
+          mobile
+            ? { width: "97%", margin: "0 auto" }
+            : { width: "956px", margin: "0 auto" }
+        }
+      >
         <h1>Work with Ghaith Konbaz</h1>
         <form
           onSubmit={handleSubmit}
           style={{ display: "flex", flexDirection: "column" }}
         >
-          <div style={{ marginBottom: "25px" }}>
+          <div style={{ marginBottom: "25px", display: "flex", width: "100%" }}>
             <TextField
-              style={{ marginRight: "10px", width: "472px" }}
+              className={classes.nameLastNameStyles}
+              style={{
+                marginRight: "10px",
+                boxSizing: "border-box",
+                width: "100%",
+              }}
               name="name"
               id="outlined-basic"
               label="Name"
@@ -100,7 +120,8 @@ const ContractForm = () => {
               size="small"
             />
             <TextField
-              style={{ width: "474px" }}
+              className={classes.nameLastNameStyles}
+              style={{ boxSizing: "border-box", width: "100%" }}
               name="lastName"
               label="Last Name"
               value={data.lastName}
@@ -256,10 +277,10 @@ const ContractForm = () => {
           >
             <MenuItem value="Not sure!">Not sure!</MenuItem>
             <MenuItem value="$5k - $10k">$5k - $10k</MenuItem>
-            <MenuItem value="$10k - $20k">$5k - $10k</MenuItem>
-            <MenuItem value="$20k - $50k">$5k - $10k</MenuItem>
-            <MenuItem value="$50k - $100k">$5k - $10k</MenuItem>
-            <MenuItem value="$100k - $200k">$5k - $10k</MenuItem>
+            <MenuItem value="$10k - $20k">$10k - $20k</MenuItem>
+            <MenuItem value="$20k - $50k">$20k - $50k</MenuItem>
+            <MenuItem value="$50k - $100k">$50k - $100k</MenuItem>
+            <MenuItem value="$100k - $200k">$100k - $200k</MenuItem>
           </TextField>
           <FormLabel id="demo-controlled-radio-buttons-group">
             Already have a contractor?
