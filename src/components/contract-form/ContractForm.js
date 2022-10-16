@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import InputLabel from "@mui/material/InputLabel";
@@ -41,6 +41,11 @@ const ContractForm = () => {
   const handleChange = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     emailjs

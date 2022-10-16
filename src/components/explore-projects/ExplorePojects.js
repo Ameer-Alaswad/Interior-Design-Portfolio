@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ProjectImageDisplay from "./project-image-display/ProjectImageDisplay";
@@ -94,6 +94,9 @@ const ExploreProjects = () => {
       }
     });
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={{ backgroundColor: "#b1b4bd", marginBottom: "-16px" }}>
       <ImageList

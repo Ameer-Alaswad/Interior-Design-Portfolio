@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { SelectedProjectContext } from "../../projects-assets/selectedProjectContext";
 import {
   projectSHomePictures,
@@ -25,13 +25,15 @@ export const Projects = () => {
     if (selectedProject === project.name) return project.img;
     return null;
   });
-  console.log(filterSelectedProjectImages);
+
   const { projectTitle, projectDescription } = filterSelectedProject[0];
   const handleClick = (e) => {
     setSelectedProject(e.target.innerText);
   };
 
-  console.log(info);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div style={{ backgroundColor: "#b1b4bd" }}>
       {projectSHomePictures.map((project) => {

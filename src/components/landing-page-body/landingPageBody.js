@@ -22,6 +22,9 @@ export default function LandingPageBody() {
   const theTheme = useTheme();
   const classes = useStyles();
   const matches = useMediaQuery(theTheme.breakpoints.down("sm"));
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <Box
