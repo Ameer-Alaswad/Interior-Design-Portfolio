@@ -3,6 +3,7 @@ import {
   WHITE_SOLID,
   FLINT,
   BLACK_SOLID,
+  CLOUDY,
 } from "../../default-colors/colors";
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -97,10 +98,12 @@ const theme = createTheme({
       letterSpacing: "5px",
       fontWeight: "bold",
       color: BLACK_SOLID,
+      backgroundColor: "#676767",
     },
     emailLinkInSectionTwo: {
       color: ZEUS,
       textDecorationColor: ZEUS,
+      backgroundColor: "#676767",
     },
     accountsLinksContainer: {
       letterSpacing: "5px",
@@ -108,6 +111,7 @@ const theme = createTheme({
       fontFamily: "'Century Gothic', sans-serif",
       marginBottom: "40px",
       marginRight: "20px",
+      backgroundColor: "#676767",
     },
     accountsLinks: {
       color: BLACK_SOLID,
