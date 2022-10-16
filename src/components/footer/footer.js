@@ -22,6 +22,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: "'Century Gothic', sans-serif",
     letterSpacing: "5px",
     fontSize: "18px",
+    backgroundColor: "#676767",
 
     [theme.breakpoints.down("md")]: {
       display: "flex",
