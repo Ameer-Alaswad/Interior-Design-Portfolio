@@ -60,6 +60,8 @@ export const theme = createTheme({
     sectionOneStyling: {
       fontSize: "20px",
       fontFamily: "'Century Gothic', sans-serif",
+      margin: "0 auto",
+      maxWidth: "1000px",
     },
     sectionTwoStyling: {
       fontSize: "20px",
