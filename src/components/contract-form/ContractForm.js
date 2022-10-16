@@ -100,7 +100,13 @@ const ContractForm = () => {
             : { width: "956px", margin: "0 auto" }
         }
       >
-        <h1>Work with Ghaith Konbaz</h1>
+        <h1
+          style={{
+            fontFamily: "'Century Gothic', sans-serif",
+          }}
+        >
+          Work with Ghaith Konbaz
+        </h1>
         <form
           onSubmit={handleSubmit}
           style={{ display: "flex", flexDirection: "column" }}
