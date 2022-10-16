@@ -3,7 +3,6 @@ import {
   WHITE_SOLID,
   FLINT,
   BLACK_SOLID,
-  CLOUDY,
 } from "../../default-colors/colors";
 import * as React from "react";
 import Box from "@mui/material/Box";

@@ -66,12 +66,14 @@ export const theme = createTheme({
     sectionTwoStyling: {
       fontSize: "20px",
       fontFamily: "'Century Gothic', sans-serif",
+      backgroundColor: CONCRETE,
     },
 
     sectionThreeStyling: {
       fontSize: "15px",
       marginTop: "25px",
       fontFamily: "'Century Gothic', sans-serif",
+      backgroundColor: CONCRETE,
     },
     weLoveToHearAboutYourProjectButton: {
       border: "solid 2px",
