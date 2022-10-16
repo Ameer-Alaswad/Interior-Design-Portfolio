@@ -154,7 +154,12 @@ export default function Footer() {
               </Typography>
             </Box>
 
-            <p className={classes.contactingByEmail}>
+            <p
+              style={{
+                backgroundColor: "#676767",
+              }}
+              className={classes.contactingByEmail}
+            >
               {forMoreInformation}
               {matches ? <br /> : false}
               <Link style={theme.custom.emailLinkInSectionTwo}>
