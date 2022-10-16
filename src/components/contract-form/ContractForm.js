@@ -256,10 +256,10 @@ const ContractForm = () => {
           >
             <MenuItem value="Not sure!">Not sure!</MenuItem>
             <MenuItem value="$5k - $10k">$5k - $10k</MenuItem>
-            <MenuItem value="$10k - $20k">$5k - $10k</MenuItem>
-            <MenuItem value="$20k - $50k">$5k - $10k</MenuItem>
-            <MenuItem value="$50k - $100k">$5k - $10k</MenuItem>
-            <MenuItem value="$100k - $200k">$5k - $10k</MenuItem>
+            <MenuItem value="$10k - $20k">$10k - $20k</MenuItem>
+            <MenuItem value="$20k - $50k">$20k - $50k</MenuItem>
+            <MenuItem value="$50k - $100k">$50k - $100k</MenuItem>
+            <MenuItem value="$100k - $200k">$100k - $200k</MenuItem>
           </TextField>
           <FormLabel id="demo-controlled-radio-buttons-group">
             Already have a contractor?
