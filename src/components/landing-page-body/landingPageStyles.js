@@ -62,11 +62,14 @@ export const theme = createTheme({
       fontFamily: "'Century Gothic', sans-serif",
       margin: "0 auto",
       maxWidth: "1000px",
+      backgroundColor: CONCRETE,
     },
     sectionTwoStyling: {
       fontSize: "20px",
       fontFamily: "'Century Gothic', sans-serif",
       backgroundColor: CONCRETE,
+      maxWidth: "1000px",
+      margin: "0 auto",
     },
 
     sectionThreeStyling: {
