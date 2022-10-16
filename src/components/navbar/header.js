@@ -35,21 +35,21 @@ const useStyles = makeStyles(() => ({
     },
   },
 
-  animatedItem: {
-    animation: `$myEffect 2s 3 ${theme.transitions.easing.easeInOut}`,
-  },
+  // animatedItem: {
+  //   animation: `$myEffect 2s 3 ${theme.transitions.easing.easeInOut}`,
+  // },
 
-  "@keyframes myEffect": {
-    "0%": {
-      transform: "translateX(0%)",
-    },
-    "15%": {
-      transform: "translateX(30px)",
-    },
-    "60%": {
-      transform: "translateX(-50px)",
-    },
-  },
+  // "@keyframes myEffect": {
+  //   "0%": {
+  //     transform: "translateX(0%)",
+  //   },
+  //   "15%": {
+  //     transform: "translateX(30px)",
+  //   },
+  //   "60%": {
+  //     transform: "translateX(-50px)",
+  //   },
+  // },
 }));
 
 const theme = createTheme({
