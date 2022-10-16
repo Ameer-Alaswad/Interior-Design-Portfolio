@@ -88,9 +88,7 @@ const ExploreProjects = () => {
     setImage(image);
     filterSelectedProject.forEach((imageName) => {
       if (image.src.includes(imageName)) {
-        console.log(selectedProject);
         setSelectedProject(imageName);
-        console.log(selectedProject);
       }
     });
   };

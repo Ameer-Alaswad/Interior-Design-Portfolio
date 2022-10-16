@@ -37,7 +37,6 @@ const ContractForm = () => {
   });
   const [sent, setSent] = React.useState(false);
   const [open, setOpen] = React.useState(false);
-  console.log(sent);
   const handleChange = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
@@ -77,7 +76,6 @@ const ContractForm = () => {
           }
         },
         (error) => {
-          console.log(error.text);
           alert("something went wrong, try again later!");
         }
       );
