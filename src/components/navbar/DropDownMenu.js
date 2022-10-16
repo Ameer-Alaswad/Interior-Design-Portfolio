@@ -8,6 +8,7 @@ import { Fade } from "@mui/material";
 import { SelectedProjectContext } from "../../projects-assets/selectedProjectContext";
 import data from "../../projects-assets/projectText.json";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ZEUS } from "../../default-colors/colors";
 
 const theme = createTheme({});
 const useStyles = makeStyles({
@@ -16,6 +17,8 @@ const useStyles = makeStyles({
   },
   headerTextStyles: {
     fontSize: "15px",
+    backgroundColor: ZEUS,
+    letterSpacing: "unset",
     [theme.breakpoints.down("sm")]: {
       fontSize: "10px",
     },
