@@ -46,7 +46,7 @@ export default function LandingPageBody() {
             </Button>
           </Stack>
 
-          <span style={theme.custom.sectionsWrapper}></span>
+          {/* <span style={theme.custom.sectionsWrapper}></span> */}
         </Typography>
         <Typography component={"span"} style={{ marginTop: "40px" }}>
           <Typography
