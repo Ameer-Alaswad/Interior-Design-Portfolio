@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import ImageList from "@mui/material/ImageList";
 import ImageListItem from "@mui/material/ImageListItem";
 import ProjectImageDisplay from "./project-image-display/ProjectImageDisplay";
-import { projectData as projectImages } from "../../projects-assets/projects-images";
+import { projectDataLowerSize as projectImagesLowSize } from "../../projects-assets/projects-images";
 import exploreProjectsStyles from "./exploreProjectsStyles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import exploreProjectsUtils from "./exploreProjectsUtils";
@@ -33,7 +33,7 @@ const ExploreProjects = () => {
   const [layoutVisible, setLayoutVisible] = React.useState(false);
 
   const cashedProjectImages = React.useMemo(() => {
-    return projectImages;
+    return projectImagesLowSize;
   }, []);
 
   const projectImagesStyle = { ...projectImagesStyles };
