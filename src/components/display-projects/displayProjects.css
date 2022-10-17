@@ -60,3 +60,48 @@
     font-family: 'Century Gothic', sans-serif;
 
 }
+
+.main-project-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 40px;
+}
+
+.content-under-image-container {
+
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    margin-right: 170px;
+
+}
+
+.content-under-image-container-responsive {
+
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.projects-navigator-container {
+    width: 191px;
+    margin-top: 40px;
+}
+
+.project-names-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.project-text-image-container {
+    width: 701px;
+}
+
+.project-text-image-container-responsive {
+    width: 80%;
+}

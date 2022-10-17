@@ -21,12 +21,14 @@ export const Projects = () => {
     }
     return null;
   });
+
   const filterSelectedProjectImages = projectData.filter((project) => {
     if (selectedProject === project.name) return project.img;
     return null;
   });
 
   const { projectTitle, projectDescription } = filterSelectedProject[0];
+
   const handleClick = (e) => {
     setSelectedProject(e.target.innerText);
   };
@@ -34,6 +36,7 @@ export const Projects = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div style={{ backgroundColor: "#b1b4bd" }}>
       {projectSHomePictures.map((project) => {
@@ -41,12 +44,7 @@ export const Projects = () => {
           return (
             <img
               key={project.img}
-              style={{
-                width: "100%",
-                height: "500px",
-                objectFit: "cover",
-                marginBottom: "40px",
-              }}
+              className="main-project-image"
               src={project.img}
               alt="main-img"
             />
@@ -55,37 +53,15 @@ export const Projects = () => {
         return null;
       })}
       <div
-        style={
+        className={
           mobile
-            ? {
-                minHeight: "600px",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-              }
-            : {
-                minHeight: "600px",
-                display: "flex",
-                justifyContent: "center",
-                marginRight: "170px",
-              }
+            ? "content-under-image-container-responsive"
+            : "content-under-image-container"
         }
       >
-        <section
-          style={{
-            width: "191px",
-            marginTop: "40px",
-          }}
-        >
+        <section className="projects-navigator-container">
           <h1 className="list-of-projects-title">Ghaith Konbaz Projects</h1>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "flex-start",
-            }}
-          >
+          <div className="project-names-container">
             {info.map((project) => {
               const { projectName } = project;
               return (
@@ -105,14 +81,10 @@ export const Projects = () => {
           </div>
         </section>
         <section
-          style={
+          className={
             mobile
-              ? {
-                  width: "80%",
-                }
-              : {
-                  width: "701px",
-                }
+              ? "project-text-image-container-responsive"
+              : "project-text-image-container"
           }
         >
           <h1 className={mobile ? "project-title-responsive" : "project-title"}>
