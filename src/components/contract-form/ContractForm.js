@@ -14,7 +14,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 const useStyles = makeStyles({
   nameLastNameStyles: {
-    // width: "472px",
     width: "100%",
   },
 });
@@ -35,12 +34,10 @@ const ContractForm = () => {
     contractor: "",
     heardAboutUs: "",
   });
-  const [sent, setSent] = React.useState(false);
   const [open, setOpen] = React.useState(false);
   const handleChange = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
   };
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -57,7 +54,6 @@ const ContractForm = () => {
       .then(
         (result) => {
           if (result.text === "OK") {
-            setSent(true);
             setOpen(true);
             setData({
               name: "",

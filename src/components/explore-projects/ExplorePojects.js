@@ -45,9 +45,10 @@ const ExploreProjects = () => {
   const smallMobileSize = useMediaQuery("(max-width:390px)");
   const projectImagesLists = {};
   let props = {
-    visible: visible,
-    setVisible: setVisible,
-    image: image,
+    visible,
+    setVisible,
+    image,
+    selectedProject,
   };
   const filterSelectedProject = data.projectsData.map((project) => {
     return project.projectName;
